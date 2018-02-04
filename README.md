@@ -7,6 +7,7 @@ The future home of <http://www.continuousimprover.com/>.
 ### Prerequisites
 
 * Ruby 2.x
+* Ruby DevKit
 * The `bundler` gem (`gem install bundler`)
 
 ### Building
