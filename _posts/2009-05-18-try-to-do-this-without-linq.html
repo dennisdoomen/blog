@@ -1,0 +1,13 @@
+---
+layout: post
+title: Try to do this without LINQ
+date: '2009-05-18T22:02:00.002+02:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2009-05-18T22:04:12.833+02:00'
+thumbnail: http://lh5.ggpht.com/_sv2gnsft17w/ShG-5XzW7CI/AAAAAAAADK0/TzooszwfYec/s72-c/image_thumb%5B2%5D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-15137028.post-4865951502073784680
+blogger_orig_url: http://www.continuousimprover.com/2009/05/try-to-do-this-without-linq.html
+---
+
+<p>Today, me and my colleague Cor have been busy pair-programming for most of the day. While doing that we tried to build a dictionary which value is an enumerable collection. I think we found a great example of the power of LINQ that I think is worth sharing.</p><p>Consider the class diagram below. ExamSeries represents a examination series consisting of one or more questions. Each series has a language-specific part represented by SeriesDetail. Our goal was to be able to apply a <a href="http://en.wikipedia.org/wiki/Specification_pattern">Specification</a> object to a collection of ExamSeries and receive a dictionary of all series matching that specification, including the specific languages. So our intention was to get a <span style="font-family:Courier New;">IDictionary&lt;ExamSeries, IEnumerable&lt;Language&gt;&gt;</span>. </p><p><a href="http://lh5.ggpht.com/_sv2gnsft17w/ShG-40lQdQI/AAAAAAAADKw/sTGr0QzeCFU/s1600-h/image%5B4%5D.png"><img style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: block; FLOAT: none; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN-LEFT: auto; BORDER-LEFT-WIDTH: 0px; MARGIN-RIGHT: auto" title="image" border="0" alt="image" src="http://lh5.ggpht.com/_sv2gnsft17w/ShG-5XzW7CI/AAAAAAAADK0/TzooszwfYec/image_thumb%5B2%5D.png?imgmax=800" width="413" height="244" /></a></p><p>We started hand-writing multiple foreach loops and managed to get what we wanted, but somehow, I got this annoying feeling in the back of my head that this should be easier. After a lot of experimenting, we found the following rather nice example of using LINQ.</p><p><a href="http://lh4.ggpht.com/_sv2gnsft17w/ShG-5qOYhjI/AAAAAAAADK4/9jhjhJTYMYg/s1600-h/image%5B10%5D.png"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; DISPLAY: inline; BORDER-TOP: 0px; BORDER-RIGHT: 0px" title="image" border="0" alt="image" src="http://lh6.ggpht.com/_sv2gnsft17w/ShG-6dRX83I/AAAAAAAADK8/WFnkJhcvRo8/image_thumb%5B6%5D.png?imgmax=800" width="656" height="178" /></a></p><p>Not bad eh?</p>

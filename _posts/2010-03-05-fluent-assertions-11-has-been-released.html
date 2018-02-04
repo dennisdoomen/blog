@@ -1,0 +1,13 @@
+---
+layout: post
+title: Fluent Assertions 1.1 has been released
+date: '2010-03-05T12:58:00.002+01:00'
+author: Dennis Doomen
+tags:
+- dotnetmag
+modified_time: '2010-03-24T09:21:21.866+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-7813112892552011440
+blogger_orig_url: http://www.continuousimprover.com/2010/03/fluent-assertions-11-has-been-released.html
+---
+
+<blockquote><p></p></blockquote><p>It’s only a <a href="http://fluentassertions.codeplex.com/releases/view/41202">few days</a> ago since we released the first version of <a href="http://fluentassertions.codeplex.com/">Fluent Assertions</a>, and we already have a new release. The reason for this is that the first release was just the public release of an internal set of classes that we’ve been using for a year or so. But this week, we've worked hard to add some important missing features that we really needed, and also improve resilience against illegal arguments such as an empty collection or null. Release 1.1 includes the following improvements.</p><ul><li>All dependencies on MSTest assemblies have been removed. So assertions will work with all testing frameworks. </li><li>Added support for Silverlight </li><li>Improved the verification messages around assertion of collections so that you don't need any debugging to figure out what went wrong. </li><li>Added object.Should().BeAssignableTo() </li><li>Added object.Should().Satisfy() to verify against a lambda or delegate. </li><li>Added extension methods on an Action or Action&lt;T&gt; which allows better support for the AAA syntax. We've rewritten a large portion of the framework's unit tests and it definitely improves unit test maintenance. </li><li>Added a ValueOf property to the exception assertions syntax that allows chaining additional Should()s on the properties of the exception.</li></ul><p>You can download it <a href="http://fluentassertions.codeplex.com/releases/view/41210">here</a>. The documentation can be found <a href="http://fluentassertions.codeplex.com/documentation">here</a>.</p>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: Fluent Assertions gets a bug fix release
+date: '2012-03-23T07:10:00.001+01:00'
+author: Dennis Doomen
+tags:
+- Fluent Assertions
+- dotnetmag
+- Testing
+modified_time: '2012-03-23T07:10:20.972+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-4034953327047601571
+blogger_orig_url: http://www.continuousimprover.com/2012/03/fluent-assertions-gets-bug-fix-release.html
+---
+
+<p>While we are working on the next major version of Fluent Assertions, we received several smaller bug reports that we bundled in release 1.7.1. </p> <ul> <li>Fixed a bug that occurs when two collections are compared for equality but the collection contains null.</li> <li>Fixed a stack overflow while formatting an object graph containing static cyclic references.</li> <li>Fixed the issue where an exception was thrown when building a failure message by dumping the values of all properties, and one of the properties throws an exception.</li> <li>Made the handling of cyclic references when validating equality of nested properties configurable (ignore / throw exception)</li> <li>Fixed some incorrect failure messages when comparing XML elements and attributes</li> <li>Fixed a NullReferenceException when comparing objects that have a write-only properties</li> <li>Fixed a potential NullReferenceException while comparing the properties of a complex graph and when a deep property contains a null object.</li></ul> <p align="left">These days, our preferred delivery mechanism is <a href="https://nuget.org/packages/FluentAssertions">NuGet</a>, but you can still get a ZIP from the CodePlex <a href="http://fluentassertions.codeplex.com/releases/view/84640">landing page</a>. Issues can be dropped on the <a href="http://fluentassertions.codeplex.com/workitem/list/basic">Issue Tracker</a> page, but we also monitor any StackOverflow tagged with <a href="http://stackoverflow.com/questions/tagged/fluent-assertions">fluent-assertions</a>.</p>  

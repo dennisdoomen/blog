@@ -1,0 +1,17 @@
+---
+layout: post
+title: 'ALM Practices Part 4: Common Code Layout'
+date: '2010-03-15T13:02:00.006+01:00'
+author: Dennis Doomen
+tags:
+- ALM Practices
+- Visual Studio
+- ALM
+- dotnetmag
+- Quality
+modified_time: '2010-08-17T09:42:13.944+02:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-5911464080858790043
+blogger_orig_url: http://www.continuousimprover.com/2010/03/tfs-development-practices-part-4-common_15.html
+---
+
+<p><strong>What is it?</strong></p>  <p>A collection of rules stating what a block of code should look like. These may include rules on where line breaks are required, how to place parentheses, how much whitespace to put before and after those parentheses, how many spaces to use when indenting and where to insert empty lines.</p>  <p><strong>Why would you do it?</strong></p>  <ul>   <li>To allow developers to work on virtually any part of the code base without being confronted with another different layout. And even though this may seem like a feeble issue, I’ve seen firsthand how difficult it can be to navigate through a block of code which uses an entirely different layout. </li>    <li>To improve the reviewability of your code base. For the same reason another developer benefits from it, the reviewer needs to be able to easily scan code for often-made mistakes or other issues. </li> </ul>  <p><strong>What’s the bare minimum you need to do?</strong></p>  <ul>   <li>Use a standard layout for the entire code base and remind everyone to adhere to it. </li> </ul>  <p><strong>What’s the usual thing to do?</strong></p>  <ul>   <li>Use a product such as <a href="http://www.jetbrains.com/resharper/">ReSharper</a> and <a href="http://www.jetbrains.com/resharper/features/code_formatting.html#Code_Formatting">configure</a> it in such a way that it will format your code automatically according to the standard layout. </li> </ul>  <p><b>How do you do that?</b></p>  <ul>   <li>Together with your team, agree on a common layout and write it done somewhere such as your team site, preferably accompanied by a piece of example code that illustrates all aspects of the standard. </li>    <li>If another team within the company has already created something like that, consider adapting their standard. This eases the burden when team members move from one project to the other. </li>    <li>Consider buying a <a href="http://www.jetbrains.com/resharper/index.html">ReSharper</a> licence and use its <a href="http://www.jetbrains.com/resharper/documentation/help20/Options/codeStyle.html">Code Style sharing</a> feature so that all team members will automatically receive the most up to date version of the standard settings. It also allows you to reformat entire files, projects or even the entire solution with one click of the mouse. </li>    <li>Create a one-page cheat sheet with a block of example code that clearly demonstrates the proper layout and distribute it amongst the team members. Use it while performing a <a href="http://www.dennisdoomen.net/2010/02/tfs-development-practices-part-2-peer.html">Peer Review</a>. </li>    <li>Install <a href="http://code.msdn.microsoft.com/sourceanalysis/Release/ProjectReleases.aspx?ReleaseId=1425">StyleCop</a> and use it for automatically checking the layout and the XML documentation according to a configurable set of rules. </li>    <li>Add compliance to this standard code layout to the project quality Checklist (I will blog about that later on) so that developers and reviewers don’t forget to check for it. </li> </ul>  

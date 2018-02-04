@@ -1,0 +1,13 @@
+---
+layout: post
+title: Fluent Assertions released on CodePlex
+date: '2010-03-01T12:56:00.001+01:00'
+author: Dennis Doomen
+tags:
+- Testing
+modified_time: '2010-03-01T12:56:54.072+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-1667213043260398048
+blogger_orig_url: http://www.continuousimprover.com/2010/03/fluent-assertions-released-on-codeplex.html
+---
+
+<p>About a year ago, me and some other colleagues started to create a simple framework for verifying the outcome of unit tests in a more natural way. Martin Opdam already blogged about this in <a href="http://blog.avivasolutions.nl/archive/2009/06/27/custom-assertions-make-your-tests-more-readable.aspx">June</a> and since then we have been adding some minor features. </p>  <p>A few weeks ago I discovered the much more powerful <a href="http://sharptestex.codeplex.com/">SharpTestEx</a> and decided to drop further development on our own extensions. I do like some of SharpTestEx’s features, but I found some limitations that causes me to reconsider. Last weekend, I decided to reinstate our extensions under the name of <a href="http://fluentassertions.codeplex.com/">Fluent Assertions</a> and release them on <a href="http://fluentassertions.codeplex.com/">CodePlex</a>. </p>  <p>So why do I think it is better? First of all, because we only have one level of indirection (the Should() extension method), it is much easier to add you own domain-specific extensions. This is something we do often and should be very trivial.</p>  <p>Secondly, all our verification methods accept a phrase stating the reason of the expected outcome such as “because it is a required field” that is used to generate a clear and comprehensive error message when the verification fails. This should help you from staying out of the debugger hell when a test fails.</p>  <p>As I’m writing this we are already working on the next release which should be available in the next few days.</p>  

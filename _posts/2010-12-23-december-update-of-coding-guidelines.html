@@ -1,0 +1,15 @@
+---
+layout: post
+title: December Update of the Coding Guidelines for C# 3.0 and C# 4.0
+date: '2010-12-23T20:38:00.001+01:00'
+author: Dennis Doomen
+tags:
+- dotnetmag
+- C#
+- Quality
+modified_time: '2010-12-23T20:47:48.449+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-4628867111626631417
+blogger_orig_url: http://www.continuousimprover.com/2010/12/december-update-of-coding-guidelines.html
+---
+
+<p>I finally found some time to update the coding guidelines with some feedback I received since it’s original release in June this year. I’ve removed the following guidelines because I found that they were either very exotic or not general enough for most developers:</p>  <ul>   <li>     <div align="left"><em>Avoid side-effects when throwing recoverable exceptions</em> (AV1044)</div>   </li>    <li>     <div align="left"><em>Don’t make assumptions on the object’s state after raising an event </em>(AV1050)</div>   </li>    <li>     <div align="left"><em>Adhere to the LINQ Design Guidelines for custom IQueryable implementations</em> (AV1075) </div>   </li>    <li>     <div align="left"><em>Explicitly define the scope of a type or member </em>(AV1551) because it is a duplicate of AV1501.</div>   </li> </ul>  <p align="left">I also noticed that the Design Guidelines section is getting bigger with each new version, so I split up that section into three smaller sections. And because of that, I had to renumber the guidelines in the AV1025-1100 range as well. So what about the new guidelines? </p>  <p align="left">Well, these are new ones:</p>  <ul>   <li><em>Use an interface to support multiple implementations, not a base class</em> (AV1004)</li> </ul>  <ul>   <li><em>Use an interface to decouple classes from each other</em> (AV1005)</li> </ul>  <ul>   <li><em>Avoid bidirectional dependencies</em> (AV1020)</li> </ul>  <ul>   <li><em>Classes should have state and behavior</em> (AV1025)</li> </ul>  <ul>   <li><em>Avoid mutual exclusive properties</em> (AV1110)</li>    <li><em>Don’t expose stateful objects through static members</em> (AV1125)</li>    <li><em>Use exceptions instead of return codes for reporting failures</em> (AV1200)</li>    <li><em>Don’t use nested loops in a method</em> (AV1532)</li> </ul>  <ul>   <li><em>Consider abstracting an external dependency or 3rd party component</em> (AV1580)</li> </ul>  <p>As usual, you can download the latest version, its A4 cheat sheet, and Visual Studio 2010 rule sets at <a href="http://www.csharpcodingguidelines.com">www.csharpcodingguidelines.com</a>.</p>  

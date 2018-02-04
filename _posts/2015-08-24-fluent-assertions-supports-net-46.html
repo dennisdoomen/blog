@@ -1,0 +1,14 @@
+---
+layout: post
+title: Fluent Assertions supports .NET 4.6, CoreCLR and .NET Native
+date: '2015-08-24T21:20:00.001+02:00'
+author: Dennis Doomen
+tags:
+- Fluent Assertions
+modified_time: '2015-08-24T21:20:56.936+02:00'
+thumbnail: http://lh3.googleusercontent.com/-EXV2aTFNvKw/Vdtul3B22OI/AAAAAAAAKTQ/_vsUtWfMsIo/s72-c/clip_image001_thumb%25255B3%25255D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-15137028.post-6127120914977790376
+blogger_orig_url: http://www.continuousimprover.com/2015/08/fluent-assertions-supports-net-46.html
+---
+
+<p>With all credits going to <a href="http://oren.codes/">Oren Novotny</a>, <a href="https://twitter.com/smudge202">Tommy Long</a>, <a href="https://twitter.com/stuartblackler">Stuart Blackler</a> and some of the Microsoft folks behind the .NET Core projects, <a href="https://www.nuget.org/packages/FluentAssertions/4.0.0">Fluent Assertions 4.0</a> introduces support for the new platforms .NET 4.6, CoreCLR and .NET Native.  <p><a href="http://lh3.googleusercontent.com/-od-9IfgsYq0/VdtulRf_QOI/AAAAAAAAKTI/r4GAQbkdRmI/s1600-h/clip_image001%25255B9%25255D.png"><img title="clip_image001" style="float: none; margin-left: auto; display: block; margin-right: auto" alt="clip_image001" src="http://lh3.googleusercontent.com/-EXV2aTFNvKw/Vdtul3B22OI/AAAAAAAAKTQ/_vsUtWfMsIo/clip_image001_thumb%25255B3%25255D.png?imgmax=800" width="532" height="480"></a> <p>Since Fluent Assertions has adopted the <a href="http://semver.org/">Semantic Versioning</a> scheme, the version number clearly shows breaking changes. It is based on <a href="https://github.com/dennisdoomen/fluentassertions/releases/tag/3.5.0">release 3.5</a>, but without the support for Windows 8.0. Microsoft is not supporting that version of Windows 8 in Visual Studio 2015 anymore. Next to that, it also removes everything that was <a href="https://github.com/dennisdoomen/fluentassertions/commit/6f0164317df98f43c5b00583d1a9b8124c286792">marked as obsolete</a> in previous versions. Supporting those new platforms was not trivial, but Oren wrote a <a href="http://oren.codes/2015/07/29/targeting-net-core/">great article</a> (from which I borrowed the above diagram) explaining how he managed to pull that off. You can also learn a lot from the discussions on <a href="https://gitter.im/dennisdoomen/fluentassertions">Gitter</a>.  <p>To install the latest version, just run the following command line from the Package Manager Console <blockquote> <p><font face="Courier New">Install-Package FluentAssertions</font></p></blockquote> <p>For feedback, comments or requests, go to the <a href="https://github.com/dennisdoomen/fluentassertions/issues">GitHub project</a>, post on <a href="http://stackoverflow.com/questions/tagged/fluent-assertions">StackOverflow</a> or just tweet me at <a href="https://twitter.com/ddoomen">@ddoomen</a>.</p>  

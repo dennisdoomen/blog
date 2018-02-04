@@ -1,0 +1,14 @@
+---
+layout: post
+title: My first thoughts on WCF RIA Services
+date: '2010-02-26T14:46:00.001+01:00'
+author: Dennis Doomen
+tags:
+- Silverlight
+- WCF RIA Services
+modified_time: '2010-02-26T14:46:15.633+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-3883629940814654113
+blogger_orig_url: http://www.continuousimprover.com/2010/02/my-first-thoughts-on-wcf-ria-services.html
+---
+
+<p>While working on my demo code for my full-day talk on <a href="http://www.dotned.nl/register/22/software-development-practices-in-de-praktijk.aspx">Software Development Practices in Practice</a> I was a bit ambitious and introduced both Silverlight 4 and WCF RIA Services. Apart from the fact that the preparation caused a bit too much of my social live, I ran in some things I don’t really like and hopefully will be improved in next versions of the <a href="http://silverlight.net/getstarted/riaservices/">WCF RIA Services</a>. If not, I’ll have to remove it from my <a href="http://www.dennisdoomen.net/2010/02/silverlight-reference-architecture.html">reference architecture</a>.</p>  <ul>   <li>The generated domain context class does not include an interface. If you want to TDD your view model classes, you have no choice then to introduce a thin adapter. Moreover, classes like EntityQuery and LoadOperation require all kinds of constructor arguments, so you cannot easily use a mocking framework.     <br /></li>    <li>I use a domain model to hide all the database details from my object-oriented design, so I surely do not want to see any foreign key fields in my service layer. The composition functionality in RIA requires the use of the [Association] attribute to specify how my childs are related to my parent and that involves referring to the identifying properties that relate the two together. In fact, you have to use literal text for that, so be careful if you rename your properties.     <br /></li>    <li>There is no built-in support for reloading the client data after submitting the changes to the server. And even if you explicitly chain a reload after your call to SubmitChanges, you have to be aware that it will not remove anything that was deleted by somebody else. In fact, if your entities have a server-generated identifier, you may end up with duplicates (one with and one without identifier). <a href="http://weblogs.asp.net/fredriknormen/archive/2009/11/24/refresh-the-cached-entityset-after-a-submitchanges-wcf-ria-services.aspx">See this post</a> for a workaround.</li> </ul>  

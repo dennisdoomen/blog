@@ -1,0 +1,12 @@
+---
+layout: post
+title: Fluent Assertions 1.2.3 released
+date: '2010-08-27T07:37:00.001+02:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2010-08-27T11:02:42.115+02:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-1870760238184169217
+blogger_orig_url: http://www.continuousimprover.com/2010/08/fluent-assertions-123-released.html
+---
+
+<p>After a week of testing in some of our projects, it is time to remove the <em>beta </em>marker from release 1.2.3 of our fluent assertion framework, <a href="http://fluentassertions.codeplex.com/">Fluent Assertions</a>. It’s just a small release, as was the previous one, but it still adds some nice additions requested by the community. This is the official list of changes:</p>  <ul>   <li>Added an As&lt;T&gt;() extension method to downcast an object in a fluent way. </li>    <li>Added a <a href="http://fluentassertions.codeplex.com/wikipage?title=ExceptionAssertions&amp;referringTitle=Documentation">ShouldNotThrow()</a> and <a href="http://fluentassertions.codeplex.com/wikipage?title=ExceptionAssertions&amp;referringTitle=Documentation">ShouldNotThrow&lt;TException&gt;()</a> extension method for asserting that a (particular) exception did not occur. </li>    <li>Fixed a NullReferenceException when comparing the properties of an object to the null-valued properties of another. </li>    <li>Fixed an IndexOutOfRangeException when comparing an empty collection with another for equality. </li>    <li>Fixed a bug where two equivalent collections that contained duplicate items were not seen as equivalent </li>    <li>Minor improvements to the verification messages. </li>    <li>Refactored the internal structure of the exception-related assertions, and removed an extra layer of inheritance. Should improve the <a href="http://fluentassertions.codeplex.com/wikipage?title=Extensibility&amp;referringTitle=Documentation">extensibility</a>. </li> </ul>  <p>As usual, you can download <a href="http://fluentassertions.codeplex.com/">Fluent Assertions 1.2.3</a> from its resident CodePlex site.</p>  

@@ -1,0 +1,12 @@
+---
+layout: post
+title: The Query Command Separation principle, who was right?
+date: '2009-03-27T16:57:00.001+01:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2009-03-27T16:57:39.278+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-2200232965079071680
+blogger_orig_url: http://www.continuousimprover.com/2009/03/query-command-separation-principle-who.html
+---
+
+<p>Yesterday, at my Design Patterns &amp; Testability session at the dotNED meeting, I tried to explain the purpose of the Query Command Separation principle. However, somebody from the company Quadrant (forgot to ask for his name) mentioned an entirely different explanation of the pattern. Since many design principles are not very well specified, I was expecting some discussion, but in this case, I was caught off guard a little bit.</p>  <p>He was explaining it as a pattern for distributing changes over multiple synchronized databases. For instance, when one database is used for reporting or querying and the other for maintaining state, command-like objects are used to apply the same change to both databases. I heard about this approach and it sounded like the Command pattern. However, he mentioned an article from <a href="http://codebetter.com/blogs/gregyoung/default.aspx">Greg Young</a> posted on Code Better, so it sounded serious enough for me to investigate.</p>  <p>Turns out we were both right. As a technical design pattern, the <a href="http://en.wikipedia.org/wiki/Command-query_separation">QCS</a> principle does indeed what I though it did and has been written down by <a href="http://en.wikipedia.org/wiki/Bertrand_Meyer">Bertrand Meyer</a>. At the same time though, Greg Young and <a href="http://www.udidahan.com/?blog=true">Udi Dahan</a> and some of their fellow Distributed Domain Driven Design guys have been redefining this pattern on the architecture level. You can read about that over <a href="http://www.udidahan.com/2008/08/11/command-query-separation-and-soa/">here</a>.</p>  

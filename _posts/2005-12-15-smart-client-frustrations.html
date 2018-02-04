@@ -1,0 +1,12 @@
+---
+layout: post
+title: Smart Client frustrations
+date: '2005-12-15T07:54:00.000+01:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2005-12-15T09:19:02.080+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-113463474206374551
+blogger_orig_url: http://www.continuousimprover.com/2005/12/smart-client-frustrations.html
+---
+
+Well, I'm quite disappointed in the amount of tool support for developing Smart Clients. One my of current projects involves a Windows Forms Smart Client that uses .NET Remoting to connect to the application server. While developing on a system with local admin rights everything works okay (obviously). But as soon as you start using no-touch deployment hell breaks loose. Apparently, it is <strong>very</strong> difficult to diagnose startup problems on a system without admin rights and using no-touch deployment. In practice fixing those problems is a task of trial-and-error. We've deployed CAS policies to give all involved assemblies FullTrust rights, but only after we discovered how limited you are with a standard no-touch deployed application. One great way of finding potential issues is to include Debug.WriteLine calls and monitor those <a href="http://www.sysinternals.com/utilities/debugview.html">DebugView</a> from SysInternals.

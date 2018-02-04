@@ -1,0 +1,12 @@
+---
+layout: post
+title: Attach to process....doesn't work
+date: '2005-09-12T20:35:00.000+02:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2005-09-12T20:41:34.823+02:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-112655049481602493
+blogger_orig_url: http://www.continuousimprover.com/2005/09/attach-to-processdoesnt-work.html
+---
+
+In one of my customer's VS.NET solutions, we use IIS to host a .NET Remoting object. Somehow, VS.NET fails to attach to IIS when we debug our client application (which in this case is a Windows Forms application). Luckely, James Avery's <a href="http://www.amazon.com/exec/obidos/tg/detail/-/0596008473/qid=1126504545/sr=8-1/ref=pd_bbs_1/103-5040656-1459068?v=glance&s=books&amp;n=507846">Visual Studio Hacks</a> pointed me at a macro that allows us to attach to the ASP.NET worker process (e.g. through a keyboard shortcut). However, for me, it doesn't work. At first I got a warning that that process does not contain unmanaged code. But successive attempts did not provide any warning at all....

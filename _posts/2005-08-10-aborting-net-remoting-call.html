@@ -1,0 +1,12 @@
+---
+layout: post
+title: Aborting a .NET Remoting call
+date: '2005-08-10T14:21:00.000+02:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2005-08-10T14:28:01.993+02:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-112367676157624472
+blogger_orig_url: http://www.continuousimprover.com/2005/08/aborting-net-remoting-call.html
+---
+
+Today I ran into quite a frustrating .NET Remoting shortcoming. It seems to be impossible to abort a long-running .NET Remoting call. I've checked on Google to see if anybody came up with a proper solution, and I have even tried to gain access to the TCP Sink that is being used, but all failed. Eventually I decided to use an asynchronous delegate to perform the call on the ThreadPool and abandon it when a certain timeout occures. Hopefully the threads are released in time, otherwise we may have a potential memory leak.

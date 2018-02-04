@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'May 27th: CQRS and Event Sourcing, an alternate architecture for Domain Driven
+  Design'
+date: '2010-05-06T11:23:00.001+02:00'
+author: Dennis Doomen
+tags:
+- dotnetmag
+- Events
+modified_time: '2010-05-06T11:25:35.228+02:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-4008422909169913982
+blogger_orig_url: http://www.continuousimprover.com/2010/05/cqrs-and-event-sourcing-alternate.html
+---
+
+<p>Most of us will be familiar with the standard 3- or 4-layer architecture you often see in larger enterprise systems. Some are already practicing Domain Driven Design and work together with the business to clarify the domain concepts. Perhaps you’ve noticed that is difficult to get the intention of the 'verbs' from that domain into this standard architecture. If performance is an important requirement as well, then you might have discovered that an Object-Relational Mapper and a relational database are not always the best solution.</p>  <p>One of the main reasons for this is the fact that the interests of a consistent domain that takes into account the many business rules, and those of data reporting and presentation are conflicting. That’s why Betrand Meyer introduced the Command Query Separation principle.</p>  <p>An architecture based on this principle combined with the Event Sourcing concept provides the ideal architecture for building high-performance systems designed using DDD. Well-known bloggers like <a href="http://www.google.nl/url?q=http://www.udidahan.com/%3Fblog%3Dtrue&amp;ei=PYriS83NCtGmOLi3weUN&amp;sa=X&amp;oi=smap&amp;resnum=1&amp;ct=result&amp;cd=1&amp;ved=0CBAQqwMoADAA&amp;usg=AFQjCNGm3IwXz-pBcmQiH5InE7J55NSV0g">Udi Dahan</a> and <a href="http://codebetter.com/blogs/gregyoung/">Greg Young</a> have already spent quite a lot of of posts on this, and this year’s Developer Days had some <a href="http://www.slideshare.net/pjvdsande/rethink-your-architecture-with-cqrs">coverage</a> as well. </p>  <p>But how do you build such a system with the. NET framework? Is it really as complex as some claim, or is just different work? If you want an answer to this, sign up for this evening and come see how I've built a concrete Silverlight demo app.</p>  <p>Subjects that I’ll cover:</p>  <ul>   <li>Tasked-based UIs </li>    <li>Command Handling </li>    <li>Event Handling </li>    <li>Eventual Consistency </li>    <li>Repository &amp; Aggregates </li>    <li>Versioning events and commands </li> </ul>  <p>You can find the latest details on this evening and the registration info <a href="http://www.dotned.nl/register/25/%22cqrs-en-event-sourcing--een--net-architectuur-zoals-het-hoort%22-bij-infosupport.aspx">here</a>.</p>  

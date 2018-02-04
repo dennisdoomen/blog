@@ -1,0 +1,12 @@
+---
+layout: post
+title: Printing a Compiled Help File (.CHM)
+date: '2007-02-22T10:47:00.001+01:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2007-02-22T10:47:26.866+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-8128657670128383791
+blogger_orig_url: http://www.continuousimprover.com/2007/02/printing-compiled-help-file-chm.html
+---
+
+<p>Many SDKs ship with a huge .CHM file&nbsp;that includes the documentation and often a class library reference. Also, many books are available as .CHM files as well. But since I prefer to read those books off-line, I often try to print out topics. Since the introduction of Internet Explorer 7, this has become quite problematic. IE has a new Shrink-to-Fit setting that is enabled by default. Due to that, printing a .CHM often results in an unreadable small font. Using IE's Print Preview option you can choose the exact scaling settings, but unfortunately, this setting is not available from the&nbsp;Html Help&nbsp;Viewer. To work around this limitation do the following:</p> <ol> <li>Open up the CHM file in the Html Help viewer  <li>Select the topic you want to print and choose <strong>Print... </strong>from the context menu <li>From the dialog box, select <strong>Print the Selected Heading and all Topics</strong>. <li>Wait for the Print dialog to appear. Now look behind that dialog for another window called <strong>HTML Help</strong>. The help viewer basically renders all those topics into one big .htm for printing.  <li>Select <strong>Properties</strong> from that window's context menu and copy the URL pointing at a local .htm file. DO NOT CLOSE THE HTML HELP WINDOW. <li>Now open up that URL in a new IE window.  <li>Choose Print Preview and change the scaling setting to whatever suits you and print...</li></ol>

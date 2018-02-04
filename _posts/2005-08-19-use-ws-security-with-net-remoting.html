@@ -1,0 +1,12 @@
+---
+layout: post
+title: Use WS-Security with .NET Remoting
+date: '2005-08-19T07:57:00.000+02:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2005-08-19T09:02:25.756+02:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-112443137505655327
+blogger_orig_url: http://www.continuousimprover.com/2005/08/use-ws-security-with-net-remoting.html
+---
+
+A while ago, Microsoft published an interesting <a href="http://msdn.microsoft.com/msdnmag/issues/03/11/RemotingChannelSinks/default.aspx">article</a> that explains how to add <a href="http://schemas.xmlsoap.org/specs/ws-security/ws-security.htm">WS-Security</a> support to a .NET Remoting channel. It relies on custom Remoting sinks (both client and server) that use the out-of-the-box services provided by Web Service Enhancements 1.0. By injecting those sinks into the channel configuration of your Remoting infrastructure, they will wrap the Remoting messages into SOAP envelopes and vice versa. Quite a nice idea, I must say.

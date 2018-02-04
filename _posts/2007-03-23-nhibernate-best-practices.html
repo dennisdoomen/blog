@@ -1,0 +1,12 @@
+---
+layout: post
+title: NHibernate best practices
+date: '2007-03-23T08:48:00.000+01:00'
+author: Dennis Doomen
+tags: 
+modified_time: '2007-03-23T08:50:03.665+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-8788546207733348682
+blogger_orig_url: http://www.continuousimprover.com/2007/03/nhibernate-best-practices.html
+---
+
+As I'm in the process of introducing <a href="http://www.hibernate.org/343.html">NHibernate</a> into a reusable architecture based on Microsoft's <a href="http://www.codeplex.com/websf">Web Client</a> and <a href="http://www.codeplex.com/servicefactory">Web Service</a> Software Factories, I've been struggling with several decisions. Should I encapsulate access to NHibernate classes in some data access layer? Where do I keep its <span style="font-family:courier new;">ISessionFactory</span> instance in a IIS-hosted WCF service? Should I have default transactions for each service interface request? Who is responsible for committing or rolling back the transaction?<br /><br />Anyway, while looking for best practices, I ran into a <a href="http://www.codeproject.com/aspnet/NHibernateBestPractices.asp">great article</a> by Billy McCafferty that not only covers many of my issues, it also presents some great design patterns and ideas that I've been adapting since then. Notice that his article mentions NHibernate getting support for C# Generics and Nullables soon.<br />Well, I have been using version 1.2.0 RC1 for a few weeks now, and it works like a charm. You can now define associations as <span style="font-family:courier new;">ISet<t></span>, <span style="font-family:courier new;">IList<t></span> or any of the other generic collections, and using types like int? or float? is a natural choice as well.

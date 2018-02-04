@@ -1,0 +1,16 @@
+---
+layout: post
+title: Is Entity Framework 4.0 ready for the real work?
+date: '2010-03-30T20:19:00.001+02:00'
+author: Dennis Doomen
+tags:
+- Visual Studio
+- dotnetmag
+- DevDays10
+- Events
+modified_time: '2010-03-31T18:52:51.363+02:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-8275661726986465482
+blogger_orig_url: http://www.continuousimprover.com/2010/03/is-entity-framework-40-ready-for-real.html
+---
+
+<p>This morning, on the Developer Days 2010, I did a talk on the current state of affairs of the 4.0 version of the Entity Framework, including a rough comparison with <a href="http://nhforge.org/">NHibernate 2.1</a>. Apparently this is something that’s on the mind of many people. The room was supposed to accommodate a maximum of 80 attendees, but at least 30 people were standing in the back or sitting on the ground and 10-20 more were refused access. I think that counts as a success… Anyway, you can find the slides <a href="http://www.slideshare.net/dennisdoomen/is-ef4-ready-for-the-real-work">here</a> and download the demo code from <a href="http://docs.google.com/leaf?id=0B75SIk1AlTeqNzk0NTY3NWEtZjg5NC00YjY3LWE3NTYtMWY1Y2NhYzRjMjhi&amp;hl=en">here</a>. </p>  <p>During the day many attendees asked me about the final conclusion. So, is Entity Framework 4.0 ready for the real work?</p>  <p>Yes…because the designers are excellent for rapid application development and suitable enough for simple domain models that provide a one-to-one mapping to the database. Moreover, you don’t need to struggle with big bundles of documentation to quickly get started.</p>  <p>But…the Code First functionality in CTP3 is still too limited for serious Domain Driven Design. It simply misses too much concepts very common in mature OR/Ms like NHibernate and its fluent add-on <a href="http://fluentnhibernate.org/">Fluent NHibernate</a>. Worse, there is no Go-Live yet, so you can’t use it in production systems yet.</p>  <p>Nevertheless, the choice between NHibernate and EF4 is not trivial and depends entirely on the context of your project. NHibernate is still my first choice, but looking at the progress Microsoft has made the last year or so, I’m confident EF will gain some ground soon…</p>  

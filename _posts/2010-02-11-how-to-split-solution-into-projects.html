@@ -1,0 +1,14 @@
+---
+layout: post
+title: How to split a solution into projects
+date: '2010-02-11T13:18:00.001+01:00'
+author: Dennis Doomen
+tags:
+- TFS
+- Visual Studio
+modified_time: '2010-02-11T13:18:28.620+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-5043248280411494234
+blogger_orig_url: http://www.continuousimprover.com/2010/02/how-to-split-solution-into-projects.html
+---
+
+<p>Yesterday, a colleague of mine asked for some guidance on how to partition a Visual Studio solution into individual projects. Instead of simply answering his email I thought that blogging about it may be useful for others as well, so here are my rules:</p>  <ul>   <li>In general, have as few projects as possible. Having many projects considerably slows down compiling, but also causes the startup time of the corresponding application to increase. Loading 10 small assemblies is much slower than loading one big assembly. Jeremy (D. Miller) mentioned this already in <a href="http://codebetter.com/blogs/jeremy.miller/archive/2008/10/10/183438.aspx">this post</a>, but Patrick Smacchia, the author of <a href="http://www.ndepend.com/">NDepend</a>, provides some good proof of if it <a href="http://codebetter.com/blogs/patricksmacchia/archive/2008/12/08/advices-on-partitioning-code-through-net-assemblies.aspx">here</a>.</li>    <li>Web Application or Web Site projects should, for obvious reasons, always have their own project. However, make sure you move as much logic out of it if you consider automatic testing important.</li>    <li>Never use logical architectural layers as a reason for partitioning your code in multiple projects. Likewise, never use it to prevent classes from accessing their internal members. Consider using Visual Studio 2010's <a href="http://blogs.u2u.be/peter/post/2010/01/18/Using-the-Visual-Studio-2010-layer-diagram-to-verify-your-solution.aspx">Layer Diagram</a> for verifying dependencies or use NDepend's excellent analysis engine. You can still use folders within your projects to maintain a clear logical separation.</li>    <li>Only split up your code if you need to deploy parts of your system separately. </li>    <li>If you like to run your unit and integration tests from different daily builds, it may be wise to put them in separate projects. We typically run the fast and independent unit tests as part of our Continuous Integration build, and only run the database-touching integrations tests from the Nightly Build. In Team Build, the easiest way for specifying which tests to run is by specifying the name of the assembly containing the test classes.</li>    <li>Consider the guidelines written down in <a href="http://www.codeplex.com/TFSGuide">Team Development with Visual Studio Team Foundation Server</a>. It provides some very good alternatives that also account for branching and release management. And don't let yourself scared off by the use of TFS. These guidelines apply to all source controlled environments.</li> </ul>  
