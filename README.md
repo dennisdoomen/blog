@@ -6,7 +6,7 @@ The future home of <http://www.continuousimprover.com/>.
 
 ### Prerequisites
 
-* Ruby 2.x
+* Ruby 2.4.x (note: 2.5 and higher may fail due to the `ffi` ruby lib only supporting < 2.5)
 * Ruby DevKit
 * The `bundler` gem (`gem install bundler`)
 
