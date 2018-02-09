@@ -85,7 +85,7 @@ analytics:
 # Site Author
 author:
   name             : "Dennis Doomen"
-  avatar           : "/assets/images/Profile.jpg"
+  avatar           : "/assets/images/profile.jpg"
   bio              : "On an everlasting quest for knowledge that significantly improves the way you build your key systems in an agile world."
   location         : "The Hague, The Netherlands"
   email            : "dennis.doomen@avivasolutions.nl"
