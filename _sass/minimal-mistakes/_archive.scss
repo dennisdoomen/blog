@@ -4,7 +4,10 @@
 
 .archive {
   margin-bottom: 2em;
-
+  background-color: $background-color;
+  padding-left: 16px;
+  padding-right: 16px;
+  
   @include breakpoint($large) {
     float: right;
     width: calc(100% - #{$right-sidebar-width-narrow});
@@ -31,7 +34,8 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  font-family: $sans-serif;
+  color: $header-color;
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -78,6 +82,7 @@
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
+    color: $header-color;
   }
 }
 

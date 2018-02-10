@@ -6,7 +6,7 @@
    Typography
    ========================================================================== */
 
-$doc-font-size: 16 !default;
+$doc-font-size: 16px !default;
 
 /* paragraph indention */
 $paragraph-indent: false !default; // true, false (default)
@@ -14,7 +14,7 @@ $indent-var: 1.3em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+$sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
@@ -31,7 +31,7 @@ $garamond: Garamond, serif !default;
 
 $global-font-family: $sans-serif !default;
 $header-font-family: $sans-serif !default;
-$caption-font-family: $serif !default;
+$caption-font-family: $sans-serif !default;
 
 /* type scale */
 $type-size-1: 2.441em !default; // ~39.056px
@@ -47,13 +47,14 @@ $type-size-8: 0.625em !default; // ~10px
    Colors
    ========================================================================== */
 
-$gray: #7a8288 !default;
+$gray: #53565a !default;
 $dark-gray: mix(#000, $gray, 40%) !default;
 $darker-gray: mix(#000, $gray, 60%) !default;
 $light-gray: mix(#fff, $gray, 50%) !default;
 $lighter-gray: mix(#fff, $gray, 90%) !default;
 
 $background-color: #fff !default;
+$header-color: #0590c6 !default;
 $code-background-color: #fafafa !default;
 $code-background-color-dark: $light-gray !default;
 $text-color: $dark-gray !default;
@@ -62,11 +63,11 @@ $border-color: $lighter-gray !default;
 $form-background-color: $lighter-gray !default;
 $footer-background-color: $lighter-gray !default;
 
-$primary-color: #7a8288 !default;
+$primary-color: #53565a !default;
 $success-color: #62c462 !default;
 $warning-color: #f89406 !default;
 $danger-color: #ee5f5b !default;
-$info-color: #52adc8 !default;
+$info-color: #ff8f1c !default;
 
 /* YIQ color contrast */
 $yiq-contrasted-dark-default: $dark-gray !default;

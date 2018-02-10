@@ -36,6 +36,10 @@
     float: left;
     margin-left: 0;
     margin-right: 0;
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: $background-color;
     width: 100%;
     clear: both;
 
@@ -55,9 +59,11 @@
 .page__title {
   margin-top: 0;
   line-height: 1;
+  color: $header-color;
 
   & + .page__meta {
     margin-top: -0.5em;
+    color: $header-color;
   }
 }
 
@@ -70,6 +76,10 @@
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
+  }
+  
+  h4 {
+    color: $header-color;
   }
 
   p,

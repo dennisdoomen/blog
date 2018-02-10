@@ -12,3 +12,8 @@ example/_site
 Gemfile.lock
 node_modules
 npm-debug.log*
+\.idea/\.idea\.dennisdoomen\.github/\.idea/
+
+\.idea/\.idea\.dennisdoomen\.github/
+
+*.user

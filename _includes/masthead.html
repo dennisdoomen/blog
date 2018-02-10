@@ -1,10 +1,8 @@
 <div class="masthead">
-  <div 
   <div class="masthead__inner-wrap">
-	<img height="181px" style="display:block" src="/assets/images/header.jpg"/>
+	<img style="display:block; width:100%" src="/assets/images/header.jpg"/>
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
         <ul class="visible-links">
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}

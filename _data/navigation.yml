@@ -1,11 +1,13 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
+  - title: "Aviva Solutions"
+    url: https://www.avivasolutions.nl
+  - title: "Fluent Assertions"
+    url: http://fluentassertions.com/
+  - title: "C# Coding Guidelines"
+    url: http://csharpcodingguidelines.com/
+  - title: "Liquid Projections"
+    url: https://github.com/liquidprojections
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"

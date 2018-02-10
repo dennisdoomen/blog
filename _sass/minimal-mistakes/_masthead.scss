@@ -18,7 +18,7 @@
     padding: 1em;
     max-width: 100%;
     display: -webkit-box;
-    display: inline-block;
+    display: block;
     -webkit-box-pack: justify;
     justify-content: space-between;
     font-family: $sans-serif-narrow;
@@ -75,6 +75,7 @@
   display: block;
   list-style-type: none;
   white-space: nowrap;
+  color: $header-color;
 
   &--lg {
     padding-right: 2em;
