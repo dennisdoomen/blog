@@ -18,7 +18,7 @@ layout: null
 </author>
 {% for post in site.posts limit:20 %}
 {% if post.author %}
-  {% assign author = site.data.authors[post.author] %}
+  {% assign author = post.author %}
 {% else %}
   {% assign author = site.author %}
 {% endif %}
@@ -31,7 +31,7 @@ layout: null
   {% else %}<published>{{ post.date | date_to_xmlschema }}</published>
   <updated>{{ post.date | date_to_xmlschema }}</updated>{% endif %}
   <author>
-    <name>{% if author.name %}{{ author.name }}{% else %}{{ author }} {% endif %}</name>
+    <name>{% if author.name %}{{ author.name }}{% else %}{{ author }}{% endif %}</name>
     <uri>{{ site.url }}</uri>
     {% if author.email %}<email>{{ author.email }}</email>{% endif %}
   </author>
