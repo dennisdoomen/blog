@@ -30,7 +30,7 @@
     nav {
       z-index: 10;
     }
-
+    
     a {
       text-decoration: none;
     }
@@ -76,6 +76,7 @@
   list-style-type: none;
   white-space: nowrap;
   color: $header-color;
+   padding-top: 0;
 
   &--lg {
     padding-right: 2em;
