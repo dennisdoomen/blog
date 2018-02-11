@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Home"
+    url: "/"
   - title: "Aviva Solutions"
     url: https://www.avivasolutions.nl
   - title: "Fluent Assertions"
