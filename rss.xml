@@ -12,15 +12,15 @@ layout: null
 <updated>{{ site.time | date_to_xmlschema }}</updated>
 <id>{{ site.url }}/</id>
 <author>
-  <name>{{ site.owner.name }}</name>
+  <name>{{ site.author.name }}</name>
   <uri>{{ site.url }}/</uri>
-  {% if site.owner.email %}<email>{{ site.owner.email }}</email>{% endif %}
+  {% if site.author.email %}<email>{{ site.author.email }}</email>{% endif %}
 </author>
 {% for post in site.posts limit:20 %}
 {% if post.author %}
   {% assign author = site.data.authors[post.author] %}
 {% else %}
-  {% assign author = site.owner %}
+  {% assign author = site.author %}
 {% endif %}
 <entry>
   <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
