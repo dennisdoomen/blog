@@ -32,7 +32,7 @@
 .search-content {
   display: none;
   visibility: hidden;
-  padding-top: 1em;
+  padding-top: 0em;
   padding-bottom: 1em;
 
   &__inner-wrap {
@@ -53,20 +53,21 @@
 
   .search-input {
     display: block;
-    margin-bottom: 0;
-    padding: 0;
+    margin-bottom: 16px;
+    padding: 16px;
     border: none;
     outline: none;
     box-shadow: none;
-    background-color: transparent;
-    font-size: $type-size-3;
+    background-color: $background-color;
+    font-size: $type-size-5;
+    color: $header-color;
 
     @include breakpoint($large) {
-      font-size: $type-size-2;
+      font-size: $type-size-5;
     }
 
     @include breakpoint($x-large) {
-      font-size: $type-size-1;
+      font-size: $type-size-5;
     }
   }
 
@@ -78,6 +79,11 @@
       content: "";
       display: block;
     }
+  }
+
+  .results {
+    background-color: $background-color;
+    padding: 16px;
   }
 
   .results__found {

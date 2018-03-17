@@ -210,8 +210,8 @@
   .visible-links {
     display: -webkit-box;
     display: flex;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
     -webkit-box-flex: 1;
     flex: 1;
     overflow: hidden;

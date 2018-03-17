@@ -4,7 +4,6 @@
 
 .masthead {
   position: relative;
-  border-bottom: 1px solid $border-color;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.15s;
@@ -57,6 +56,7 @@
 
   .site-nav {
     margin-left: 0;
+    line-height: 1;
 
     @include breakpoint($small) {
       float: right;
@@ -75,6 +75,7 @@
   display: block;
   list-style-type: none;
   white-space: nowrap;
+  font-size: medium;
   color: $header-color;
    padding-top: 0;
 

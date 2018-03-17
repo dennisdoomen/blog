@@ -15,7 +15,8 @@ body {
   font-family: $global-font-family;
   line-height: 1.5;
   background-image: url(/assets/images/background_site.jpg);
-  background-size: cover;
+  background-size: auto;
+  background-repeat: no-repeat;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
