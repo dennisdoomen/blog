@@ -23,9 +23,6 @@
   @include breakpoint($large) {
     float: left;
     width: calc(#{$right-sidebar-width-narrow} - 1em);
-    opacity: 0.75;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
 
     &:hover {
       opacity: 1;
@@ -33,11 +30,6 @@
 
     &.sticky {
       overflow-y: auto;
-      /* calculate height of nav list */
-/*      height: calc(
-        100vh - 90px - 2em 
-      ); // viewport height - approx. masthead height - main content top margin
-      */
     }
   }
 
@@ -50,15 +42,15 @@
   h4,
   h5,
   h6 {
-    margin-bottom: 0;
+    margin-bottom: 10px;
     font-family: $sans-serif-narrow;
-    color: $background-color;
+    color: $text-background-color;
   }
 
   p,
   li {
     font-family: $sans-serif;
-    color: $background-color;
+    color: $text-background-color;
     font-size: $type-size-6;
     line-height: 1.5;
   }
@@ -151,7 +143,6 @@
 
   @include breakpoint($large) {
     margin-top: 10px;
-    margin-bottom: 10px;
   }
 }
 .sidebar .author__name {
@@ -163,7 +154,7 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 20px;
   }
 }

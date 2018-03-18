@@ -58,7 +58,7 @@
     border: none;
     outline: none;
     box-shadow: none;
-    background-color: $background-color;
+    background-color: $text-background-color;
     font-size: $type-size-5;
     color: $header-color;
 
@@ -82,7 +82,7 @@
   }
 
   .results {
-    background-color: $background-color;
+    background-color: $text-background-color;
     padding: 16px;
   }
 

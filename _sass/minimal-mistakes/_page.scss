@@ -24,12 +24,12 @@
   @include breakpoint($large) {
     float: right;
     width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    padding-right: 0px;
   }
 
   @include breakpoint($x-large) {
     width: calc(100% - #{$right-sidebar-width});
-    padding-right: $right-sidebar-width;
+    padding-right: 0px;
   }
 
   .page__inner-wrap {
@@ -39,7 +39,7 @@
     padding-top: 16px;
     padding-left: 16px;
     padding-right: 16px;
-    background-color: $background-color;
+    background-color: $text-background-color;
     width: 100%;
     clear: both;
 
@@ -60,6 +60,7 @@
   margin-top: 0;
   line-height: 1;
   color: $header-color;
+  font-size: $type-size-4;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -85,7 +86,7 @@
   p,
   li,
   dl {
-    font-size: 1em;
+    font-size: $type-size-5;
   }
 
   /* paragraph indents */
@@ -120,7 +121,7 @@
   dd {
     margin-left: 1em;
     font-family: $sans-serif;
-    font-size: $type-size-6;
+    font-size: $type-size-5;
   }
 
   .small {
@@ -410,17 +411,20 @@
 .page__related {
   @include clearfix();
   float: left;
+  background-color: $text-background-color;
   margin-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
   padding-top: 1em;
   border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
+    width: calc(100% - #{$right-sidebar-width-narrow} );
   }
 
   @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
+    width: calc(100% - #{$right-sidebar-width} );
   }
 
   a {
