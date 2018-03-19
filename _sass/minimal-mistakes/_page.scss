@@ -312,10 +312,14 @@
 
 .page__comments {
   float: left;
+  margin-top: 2em;
   margin-left: 0;
   margin-right: 0;
+  padding-left: 1em;
+  padding-right: 1em;
   width: 100%;
   clear: both;
+  background-color: $text-background-color;
 }
 
 .page__comments-title {
