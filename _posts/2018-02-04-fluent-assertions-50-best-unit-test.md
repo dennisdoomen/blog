@@ -49,7 +49,7 @@ The failure message will look like this:
 
 > Expected numbers to contain 4 item(s) because we thought we put four items in the collection, but found 3.
 
-Fluent Assertions will traverse the stack trace to find the line of code that invokes the assertion and then extracts the name of the variable or constant from your real C# files. So you'll need to build your unit tests in debug mode, even from a build server, to really benefit from this. In release builds, the compiler tends to inline lambda invocations. If it can't find this information, it will fall back on a more generic name like collection or object. 
+Fluent Assertions will traverse the stack trace to find the line of code that invokes the assertion and then extracts the name of the variable or constant from your real C# files. So you'll need to build your unit tests in debug mode, even from a build server, to really benefit from this. In release builds, the compiler tends to inline lambda invocations. If it can't find this information, it will fall back on a more generic name like collection or object.
 
 Note that analyzing the thread's stack trace is not supported in any .NET Standard preceding 2.0. So this feature will only work under .NET Standard 2.0 or the full .NET Framework. Also, if you've been building your own extensions around existing calls to Should(), consider tacking on the [CustomAssertion] attribute. You can read more about this in the @extensibility guidelines.
 
