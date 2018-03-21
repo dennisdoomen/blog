@@ -12,7 +12,7 @@ blogger_orig_url: http://www.continuousimprover.com/2018/02/fluent-assertions-50
 
 It has been almost a year since [version 4.19](https://github.com/fluentassertions/fluentassertions/releases/tag/4.19.0), the last functional release of Fluent Assertions was shipped. Not because of a lack of feature requests, but simply because this new version has cost me all the private time I had. My main goal of this release was to repair some of the design mistakes I have made over the years and introduce the only key feature that Fluent Assertions was still missing compared to other libraries. This also gave me the time to run a contest resulting in a great new logo designed by [Ben Palmer](https://github.com/IUsername). So after three betas and five release candidates, I present to you [Fluent Assertions 5.0](https://github.com/fluentassertions/fluentassertions/releases/tag/5.0.0). It contains loads of new features, small and big, but also tries to break with the past.
 
-![logo image]({{ "/assets/posts/2018-02-04_FluentAssertions_NewLogo.png" | absolute_url }})
+![logo image]({{ "/assets/images/posts/2018-02-04_FluentAssertions_NewLogo.png" | absolute_url }})
 
 #### Embracing standards
 
