@@ -11,11 +11,9 @@ blogger_id: tag:blogger.com,1999:blog-15137028.post-3585950272242036702
 blogger_orig_url: http://www.continuousimprover.com/2017/11/the-ugly-of-event-sourcingreal-world.html
 ---
 
-
-
 Event Sourcing is a beautiful solution for high-performance or complex business systems, but you need to be aware that this also introduces challenges most people don't tell you about. After having [dedicated a post](http://www.continuousimprover.com/2017/06/the-ugly-of-event-sourcing-projection.html) on the challenges of dealing with projection migrations and how to optimize that, it is time to talk about some of the problems that can happen in production.  
 
-&nbsp;<img style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; border-left: 0px; display: block; padding-right: 0px; margin-right: auto" border="0" src="https://ak4.picdn.net/shutterstock/videos/16299604/thumb/1.jpg" width="640" height="361"> 
+![soldiers]({{ '/assets/images/posts/2017-11_soldiers.jpg' | absolute_url }})
 
 So you've managed to design your aggregate boundaries properly, optimized your projection rebuilding logic so that migrations from one version to another complete painlessly, but then you face a run-time issue in production that you never saw before. I generally divide these kinds of problems in two categories. Those that you run into quite quickly and those that keep you awake outside business hours. 
 
