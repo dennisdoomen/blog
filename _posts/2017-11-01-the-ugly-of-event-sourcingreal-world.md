@@ -1,0 +1,76 @@
+---
+
+title: The Ugly of Event Sourcing–Real-world Production Issues
+date: '2017-11-01T07:41:00.001+01:00'
+
+tags:
+- event sourcing
+- domain driven design
+modified_time: '2017-11-01T07:41:35.030+01:00'
+blogger_id: tag:blogger.com,1999:blog-15137028.post-3585950272242036702
+blogger_orig_url: http://www.continuousimprover.com/2017/11/the-ugly-of-event-sourcingreal-world.html
+---
+
+
+
+Event Sourcing is a beautiful solution for high-performance or complex business systems, but you need to be aware that this also introduces challenges most people don't tell you about. After having [dedicated a post](http://www.continuousimprover.com/2017/06/the-ugly-of-event-sourcing-projection.html) on the challenges of dealing with projection migrations and how to optimize that, it is time to talk about some of the problems that can happen in production.  
+
+&nbsp;<img style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; border-left: 0px; display: block; padding-right: 0px; margin-right: auto" border="0" src="https://ak4.picdn.net/shutterstock/videos/16299604/thumb/1.jpg" width="640" height="361"> 
+
+So you've managed to design your aggregate boundaries properly, optimized your projection rebuilding logic so that migrations from one version to another complete painlessly, but then you face a run-time issue in production that you never saw before. I generally divide these kinds of problems in two categories. Those that you run into quite quickly and those that keep you awake outside business hours. 
+
+**Issues that usually reveal themselves pretty quickly** 
+
+Something we ran into a couple of times is a change in the maximum length of some aggregate root property. Maybe the title of a product was constraint to 50 characters, which seemed to be a very sensible limit for a long time. But then somebody changes the domain and increases that length. If your projection store isn't prepared for that, you'll end up with truncated data at best or a database error at worst. You could just define that column as being the database's max length, but I know for a fact that this has some serious performance implications on SQL Server. That's why we have the projector explicitly truncate the event data. Something similar but less likely can happen with columns that were supposed to hold a 32-bit integer, but then change into 64-bit longs.  
+
+Another interesting problem we've run into is an event which has a property that everybody expects to have a valid value but for which almost nobody remembers older versions of that event didn't even have that property. You won't spot that problem during day-to-day development, unless you happen to be running a build against older production databases like we do. The more versions you have of an event (we have one that is post-fixed with *V5*), the more of this knowledge dissipates into history. Unless you test your projectors against every earlier incarnation of an event (instead of relying on upconverters to do their thing), the only thing you can do is to document your events properly. 
+
+So in most cases the developers that change the domain are also the ones that work on the projection code. It's not entirely unconceivable that such a developer makes assumptions about the order the projector gets to see the events in. We have a guideline that states that you shouldn’t extend events for the purpose of improving the projector, and assuming an order may not feel like a violation to that. Just imagine what happens when somebody alters the domain in such a way that the order changes. And yes, this happened to us as well. 
+
+**Issues that won't show up until the most inconvenient time** 
+
+A very common problem in a CQRS architecture is the separation between the domain side (the write side) and the query side (the read side). Somehow those two worlds need to be kept in sync. With Event Sourcing, this is done using events. And though in most cases, the same developer deals with both sides of the system, both sides may evolve independently, especially in bigger code bases. This introduces the risk that the projection code doesn't entirely handle the events the way the domain intended them to be used. At some point somebody will replace, split or merge one or more events in the domain and forget to update the corresponding projections. And this is exactly what happened to us, more than once. 
+
+Another class of pain-in-the-butt problems are projectors that have misbehaving or unexpected dependencies. You may remember from one of my [earlier posts](http://www.continuousimprover.com/search/label/event%20sourcing) that we started with a CQRS architecture and a traditional database-backed domain model. We didn’t move to Event Sourcing until much later. To keep that migration as smooth as possible, we introduced synchronous projectors that would maintain the immediate consistent query data as projections. If those synchronous projectors would be completely autonomous (as they should), everything would be fine and we could all go on with our lives. 
+
+However, over the years, some unexpected dependencies sneaked into the codebase. Apparently some developer decided it was a good idea to reuse the data that was maintained by another projector. This surfaced in two separate incidents. The first happened when we were rebuilding a projection after a schema upgrade. The projector ended up reading from another projection that was at a state much further in the event store's history. As this didn't cause any crashes, it took us quite some time to figure out why the rebuilt projection contained some unexpected data. The other one was quite similar and was caused by an asynchronous projector relying on the data persisted by a synchronous projector. Again, the autonomy of projectors is a key requirement.  
+
+In that respect, lookups can have similar problems even though they must be owned by the projector that maintains the main projection. Reuse of lookups is not that common, but not entirely exceptional either. I've seen lookups that can be used to find recurring things such as looking up the user's full name based on the identity. Since this is quite a common requirement, I can imagine such a lookup from being reused. However, the actuality of that look-up must be considered carefully. First, who maintains the lookup and how does the state of the lookup reflect on the projector that relies on it? What happens if they get updated at a different rate? And what if the lookup uses some kind of in-memory LRU cache? How will that work in a web farm? All questions that need to be answered on a case-by-case basis. Although there's no generic guideline here, we tend to ensure a lookup is used and owned by a single projector only. This simplifies the situation a bit and allows us to make more localized decisions on cachability, exception handling and how that affects the lookups, as well as the accuracy of it. 
+
+Those who have been using NEventStore as their storage engine are kind of forced into a model where the event store actively pushes events into the projectors. In other words, the event store tracks whether an event was handled by all projectors or not. So unless your solution wraps the projectors' work in one large database transaction, your projectors need to be idempotent. A common solution is to use the version of the aggregate that is often included in the event to see if that event was already handled. Although that is a pretty naïve solution, it gets worse if you need to aggregate events from multiple aggregates. Do you track two separate versions per projection? Or do you create some separate administration per projection? These kinds of problems let us to believe that we shouldn't use NEventStore anymore.  
+
+Hey, didn’t I say we only had two categories of problems? I did, but it just happens there is a third undocumented category of problems. 
+
+**Things you would never expect they could happen** 
+
+To speed up the projection work, at some point we started to experiment with batching a large number of projection operations into a single unit-of-work (we were and *are* still using NHibernate). But because we didn't want to maintain a database transaction of that size, we relied on the idempotency of the projectors to be able to replay multiple events when any of the projection work failed. This all worked fine for a while, until we got reports about projection exceptions referring to non-null database constraints. After some in-depth analysis, extended logging and painstakingly long debug sessions, we found the following events (no pun intended) happened: <ol> 
+* Event number 20 required a projection to be deleted, which it did. 
+* Some more unrelated events were handled after the application stopped or crashed for some reason. 
+* After restarting, the process restarted with event 10, which expected this projection to be still there. 
+* Since our code just creates projection the first time it is referred to, we created a new instance of this projection with all its properties set to default values, except those related to event 10. 
+* This projection got flushed into the database where it ran into a couple of non-null constraints and…boom!</ol> 
+
+This made us decide to abandon the idea of batching until we managed to reduce the scope of those transactions. 
+
+Another interesting problem happened when we got a production report about a unique key violation happening in one of the projection tables. Since that projector maintained a single projection per aggregate and the violation involved the functional key of that aggregate, we were at loss initially. After requesting a copy of the production database and studying the event streams we discovered two aggregates which identities where exactly the same *except* for their casing. Our event store does not treat those identities as equivalent because we started our project with an earlier version of NEventStore that required GUIDs as the stream identities. We convert natural keys to GUIDs by using [an algorithm](https://github.com/LogosBible/Logos.Utility/blob/master/src/Logos.Utility/GuidUtility.cs) written by Bradley Grainger to generate deterministic GUIDs from strings. However, SQL Server, which serves as our projections store, does not care about casing differences. So even though our event store treated those identities as separate streams, the projection code ran into the database's unique key violation. Fortunately most event store implementations use strings for identifying streams. For our legacy scenario, we decided to generate those GUIDs from the lowercase version of the identity. 
+
+In another mystery case we received some complains that editing a particular document got slower and slower. Reading the data didn't show any issues, but writing definitely did. We quickly concluded that the involved projection was perfectly fine and started to look for bugs in the event store code, transaction management and the way we hydrate aggregates from events. We couldn't find anything out of the ordinary, until we requested a dump of that specific aggregates’ event history. We have a special diagnostics page to dump the event stream in JSON format, but somehow that page timed out. We needed to get the actual production database before we discovered a single event stream with over 100K events! Some kind of background job that ran regularly was updating the aggregate pretty often. But since the aggregate method involved didn't check for idempotency, a new event was emitted for each update. After a couple of months this definitely added up. We had to delete the entire event stream from the event store and rebuild the involved projections to resolve the issue.  
+
+However, the most painful problem we encountered did not surface until after months of regular load testing. It appeared as if a projector missed some events for some reason. We first assumed the projector itself had a bug, but then we discovered similar problems with other projects. We also learned that it only happened under high load, so we suspected that the projection plumbing didn't properly roll back the transactions that wrap the projections. We blamed kind of every part of the code base and even looked at the implementation of NEventStore itself. But we never considered the fact that a SQL Server identity column (which we use to identify the order we should project events) could result in inserts that [alternative solution](https://dba.stackexchange.com/questions/133556/can-i-rely-on-reading-sql-server-identity-values-in-order/135116#135116">complete out of order</a>. So if the second insert completes before the first completes, it is possible that the projector will process that second event before it even had a chance to see the first one. We had to use exclusive locks during event store inserts to prevent this. And since our read-write ratio is 100:1, this doesn't affect our performance in any way. Other event stores have used an <a href="https://github.com/SQLStreamStore/SQLStreamStore/pull/39/files#diff-27f7cad6583c7686c2009315cd833e0aR58) by just reloading a page of events if a gap is detected. 
+
+**What does that mean for the future? ** 
+
+Well, we did learn from all of this and identified a couple of guidelines that might be useful to you too. 
+
+ 
+* Projections should never crash. Always truncate textual data, but log a warning if that happens. 
+* If a projector throws and retrying doesn't help (transient exception et al), mark the projection as corrupt so that the UI can handle this. 
+* Projectors should be autonomous. In other words, they run independent of other projectors, track their own progress and decide themselves when to rebuild. The consequence of this is that they need to run asynchronously. 
+* Build infrastructure to extract individual streams or related streams for diagnostic purposes. 
+* Account for case sensitivity of aggregate identities. However, how you handle them depends on the event store implementation and underlying persistency store. 
+
+A lot of the problems described in this post have been the main driving force for us to invest in [LiquidProjections](https://github.com/liquidprojections/), a set of light-weight libraries for building various types of autonomous projectors. But that's a topic for another blog post…. 
+
+**What about you?** 
+
+Hopefully this will be my last post on the dark side of Event Sourcing, which means I'd love to know whether you recognize any of these problems. Did you run into any other noticeable issues? Or did you find alternative or better solutions? If so, let me know by commenting below. Oh, and follow me at [@ddoomen](https://twitter.com/ddoomen) to get regular updates on my everlasting quest for knowledge that significantly improves the way you build your projections in an Event Sourced world.
