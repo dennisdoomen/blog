@@ -91,7 +91,31 @@ Note that the object you execute the `Should().Raise` call on is not the same ob
 
 #### Upgrading tips
 
-So while dogfooding the betas and release candidates on our own projects, I collected a couple of notes that might help you understand any issues that you may run into while upgrading. In general, be prepared for discovering some false-positives that were hidden because of earlier bugs in Fluent Assertions. <ul><li>The changes to BeEquivalentTo will be the most visible ones:<ul><li>Disabling auto-conversion may cause some tests to fail because different types used to be convertible. Fix the expectation or use the WithAutoConversionFor option. <li>Your tests may fail because of BeEquivalentTo reporting missing properties. This is caused by the expectation object being the driving factor for the structural comparison. Use Including or Excluding to fix that.<li>They may also fail because the expectation doesn't define any properties. This is often a signal that you pass in an abstract type as the expectation. Change the expectation or use the IncludeAllRuntimeProperties option.<li>Use WithTracing to understand how FA has evaluated your object graph.</li></ul><li>The date and time extensions such as those to define 20.September(2018).At(19, 51) have moved to FluentAssertions.Extensions, so do a global regex text replace from <br><br>using FluentAssertions;<br><br>to<br><br>using FluentAssertions;<br>using FluentAssertions.Extensions;<li>WithInnerException returns the inner exception, so we removed WithInnerMessage. Just use WithMessage instead.</li></ul>
+So while dogfooding the betas and release candidates on our own projects, I collected a couple of notes that might help you understand any issues that you may run into while upgrading. In general, be prepared for discovering some false-positives that were hidden because of earlier bugs in Fluent Assertions. 
+
+The changes to `BeEquivalentTo` will be the most visible ones:
+
+* Disabling auto-conversion may cause some tests to fail because different types used to be convertible. Fix the expectation or use the `WithAutoConversionFor` option.
+* Your tests may fail because of `BeEquivalentTo` reporting missing properties. This is caused by the expectation object being the driving factor for the structural comparison. Use `Including` or `Excluding` to fix that.
+* They may also fail because the expectation doesn't define any properties. This is often a signal that you pass in an abstract type as the expectation. Change the expectation or use the `IncludeAllRuntimeProperties` option.
+* Use `WithTracing` to understand how FA has evaluated your object graph.
+
+Additionally:
+
+* The date and time extensions such as those to define `20.September(2018).At(19, 51)` have moved to `FluentAssertions.Extensions`, so do a global regex text replace from:
+
+```csharp
+using FluentAssertions;
+``` 
+
+to
+
+```csharp
+using FluentAssertions;
+using FluentAssertions.Extensions;
+```
+
+* `WithInnerException` returns the inner exception, so we removed `WithInnerMessage`. Just use `WithMessage` instead.</li></ul>
 
 #### Sponsor us
 
