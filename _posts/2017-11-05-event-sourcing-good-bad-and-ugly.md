@@ -12,7 +12,7 @@ blogger_orig_url: http://www.continuousimprover.com/2017/11/event-sourcing-good-
 Just a small post to provide an overview of all the posts in this series.
 
 * [The power of projections, their independence of place and time and reporting projections](http://www.continuousimprover.com/2017/02/the-good-of-event-sourcing-projections.html).
-* Handling conflicts in the domain, replication techiques and evolving the domain](http://www.continuousimprover.com/2017/02/the-good-of-event-sourcing-conflict.html).
+* Handling conflicts in the domain, replication techniques and evolving the domain](http://www.continuousimprover.com/2017/02/the-good-of-event-sourcing-conflict.html).
 * [The pains of wrongly designed domains](http://www.continuousimprover.com/2017/03/the-bad-of-event-sourcingthe-pains-of.html) and how to design them properly.
 * [Dealing with projection schema changes, blue-green migrations and event archivability](http://www.continuousimprover.com/2017/06/the-ugly-of-event-sourcing-projection.html).
 * [Examples of real-world production issues and how we dealt with those](http://www.continuousimprover.com/2017/11/the-ugly-of-event-sourcingreal-world.html).
