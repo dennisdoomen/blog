@@ -11,11 +11,11 @@ blogger_id: tag:blogger.com,1999:blog-15137028.post-3585950272242036702
 blogger_orig_url: http://www.continuousimprover.com/2017/11/the-ugly-of-event-sourcingreal-world.html
 ---
 
-Event Sourcing is a beautiful solution for high-performance or complex business systems, but you need to be aware that this also introduces challenges most people don't tell you about. After having [dedicated a post](http://www.continuousimprover.com/2017/06/the-ugly-of-event-sourcing-projection.html) on the challenges of dealing with projection migrations and how to optimize that, it is time to talk about some of the problems that can happen in production.  
+Event Sourcing is a beautiful solution for high-performance or complex business systems, but you need to be aware that this also introduces challenges most people don't tell you about. After having [dedicated a post](http://www.continuousimprover.com/2017/06/the-ugly-of-event-sourcing-projection.html) on the challenges of dealing with projection migrations and how to optimize that, it is time to talk about some of the problems that can happen in production.
 
 ![soldiers]({{ '/assets/images/posts/2017-11_soldiers.jpg' | absolute_url }})
 
-So you've managed to design your aggregate boundaries properly, optimized your projection rebuilding logic so that migrations from one version to another complete painlessly, but then you face a run-time issue in production that you never saw before. I generally divide these kinds of problems in two categories. Those that you run into quite quickly and those that keep you awake outside business hours. 
+So you've managed to design your aggregate boundaries properly, optimized your projection rebuilding logic so that migrations from one version to another complete painlessly, but then you face a run-time issue in production that you never saw before. I generally divide these kinds of problems in two categories. Those that you run into quite quickly and those that keep you awake outside business hours.
 
 **Issues that usually reveal themselves pretty quickly** 
 
