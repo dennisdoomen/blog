@@ -17,7 +17,7 @@ Event Sourcing is a beautiful solution for high-performance or complex business 
 
 So you've managed to design your aggregate boundaries properly, optimized your projection rebuilding logic so that migrations from one version to another complete painlessly, but then you face a run-time issue in production that you never saw before. I generally divide these kinds of problems in two categories. Those that you run into quite quickly and those that keep you awake outside business hours.
 
-**Issues that usually reveal themselves pretty quickly** 
+#### Issues that usually reveal themselves pretty quickly
 
 Something we ran into a couple of times is a change in the maximum length of some aggregate root property. Maybe the title of a product was constraint to 50 characters, which seemed to be a very sensible limit for a long time. But then somebody changes the domain and increases that length. If your projection store isn't prepared for that, you'll end up with truncated data at best or a database error at worst. You could just define that column as being the database's max length, but I know for a fact that this has some serious performance implications on SQL Server. That's why we have the projector explicitly truncate the event data. Something similar but less likely can happen with columns that were supposed to hold a 32-bit integer, but then change into 64-bit longs.  
 
