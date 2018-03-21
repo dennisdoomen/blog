@@ -65,11 +65,13 @@ Similarly to auto-conversion, I've considerably simplified the way Fluent Assert
 
 #### Formatting your objects beautifully
 
-The formatting engine in Fluent Assertions is based on built-in and custom implementations of the IValueFormatter interface. Unfortunately, this design has suffered from a long-standing design mistake. It could not properly detect cyclic references. The fix for that required me to change the method signature in a breaking way:<
+The formatting engine in Fluent Assertions is based on built-in and custom implementations of the `IValueFormatter` interface. Unfortunately, this design has suffered from a long-standing design mistake. It could not properly detect cyclic references. The fix for that required me to change the method signature in a breaking way:
 
+```csharp
 string Format(object value, FormattingContext context, FormatChild formatChild);
+```
 
-The context parameter provides information about the depth of the graph as well as an indicating whether the formatter should use line-breaks in its output. But the fundamental change here is the FormatChild delegate that is passed in. In previous releases, if a formatter needed to format data itself, it would directly call Formatter.ToString. But that did not allow me to keep track of the graph that was being formatted. By using the formatChild parameter instead, Fluent Assertions will automatically detect a cyclic dependency and display a clear message for that value. If you want to build your own formatters, check out the <a href="http://fluentassertions.com/extensibility.html">extensibility guide</a>.
+The context parameter provides information about the depth of the graph as well as an indicating whether the formatter should use line-breaks in its output. But the fundamental change here is the `FormatChild` delegate that is passed in. In previous releases, if a formatter needed to format data itself, it would directly call `Formatter.ToString`. But that did not allow me to keep track of the graph that was being formatted. By using the `formatChild` parameter instead, Fluent Assertions will automatically detect a cyclic dependency and display a clear message for that value. If you want to build your own formatters, check out the [extensibility guide](http://fluentassertions.com/extensibility.html).
 
 #### New event monitoring API
 
