@@ -77,19 +77,17 @@ The context parameter provides information about the depth of the graph as well 
 
 Being able to assert that a C# event was raised has been part of the API for years now. But with the trend of multi-threading development and the introduction of async and await, this API started to fall apart. It relied on thread-static state (did I already mention how bad static mutable state is?). So in this release, I've introduced a slightly modified syntax that makes the monitoring scope explicit and independent of the thread on which something is running.
 
+```csharp
 var subject = new EditCustomerViewModel();
 
 using (var monitoredSubject = subject.Monitor())
-
 {
-
-subject.Foo();
-
-monitoredSubject.Should().Raise("NameChangedEvent");
-
+  subject.Foo();
+  monitoredSubject.Should().Raise("NameChangedEvent");
 }
+```
 
-Note that the object you execute the Should().Raise call on is not the same object as your subject. The Monitor method returns an object implementing IMonitor as an override of IDisposable that defines when monitoring should be stopped. And for those people that love to build their own assertion, that object exposes a load of metadata that you can use any way you can. If you want to learn more about this, check out the <a href="http://fluentassertions.com/documentation.html">updated documentation</a>. 
+Note that the object you execute the `Should().Raise` call on is not the same object as your subject. The Monitor method returns an object implementing `IMonitor` as an override of `IDisposable` that defines when monitoring should be stopped. And for those people that love to build their own assertion, that object exposes a load of metadata that you can use any way you can. If you want to learn more about this, check out the [updated documentation](http://fluentassertions.com/documentation.html).
 
 #### Upgrading tips
 
