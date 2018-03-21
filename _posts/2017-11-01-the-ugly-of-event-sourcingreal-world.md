@@ -39,16 +39,17 @@ Those who have been using NEventStore as their storage engine are kind of forced
 
 Hey, didn’t I say we only had two categories of problems? I did, but it just happens there is a third undocumented category of problems.
 
-**Things you would never expect they could happen** 
+#### Things you would never expect they could happen
 
-To speed up the projection work, at some point we started to experiment with batching a large number of projection operations into a single unit-of-work (we were and *are* still using NHibernate). But because we didn't want to maintain a database transaction of that size, we relied on the idempotency of the projectors to be able to replay multiple events when any of the projection work failed. This all worked fine for a while, until we got reports about projection exceptions referring to non-null database constraints. After some in-depth analysis, extended logging and painstakingly long debug sessions, we found the following events (no pun intended) happened: <ol> 
-* Event number 20 required a projection to be deleted, which it did. 
-* Some more unrelated events were handled after the application stopped or crashed for some reason. 
-* After restarting, the process restarted with event 10, which expected this projection to be still there. 
-* Since our code just creates projection the first time it is referred to, we created a new instance of this projection with all its properties set to default values, except those related to event 10. 
-* This projection got flushed into the database where it ran into a couple of non-null constraints and…boom!</ol> 
+To speed up the projection work, at some point we started to experiment with batching a large number of projection operations into a single unit-of-work (we were and *are* still using NHibernate). But because we didn't want to maintain a database transaction of that size, we relied on the idempotency of the projectors to be able to replay multiple events when any of the projection work failed. This all worked fine for a while, until we got reports about projection exceptions referring to non-null database constraints. After some in-depth analysis, extended logging and painstakingly long debug sessions, we found the following events (no pun intended) happened:
+ 
+* Event number 20 required a projection to be deleted, which it did.
+* Some more unrelated events were handled after the application stopped or crashed for some reason.
+* After restarting, the process restarted with event 10, which expected this projection to be still there.
+* Since our code just creates projection the first time it is referred to, we created a new instance of this projection with all its properties set to default values, except those related to event 10.
+* This projection got flushed into the database where it ran into a couple of non-null constraints and...boom!
 
-This made us decide to abandon the idea of batching until we managed to reduce the scope of those transactions. 
+This made us decide to abandon the idea of batching until we managed to reduce the scope of those transactions.
 
 Another interesting problem happened when we got a production report about a unique key violation happening in one of the projection tables. Since that projector maintained a single projection per aggregate and the violation involved the functional key of that aggregate, we were at loss initially. After requesting a copy of the production database and studying the event streams we discovered two aggregates which identities where exactly the same *except* for their casing. Our event store does not treat those identities as equivalent because we started our project with an earlier version of NEventStore that required GUIDs as the stream identities. We convert natural keys to GUIDs by using [an algorithm](https://github.com/LogosBible/Logos.Utility/blob/master/src/Logos.Utility/GuidUtility.cs) written by Bradley Grainger to generate deterministic GUIDs from strings. However, SQL Server, which serves as our projections store, does not care about casing differences. So even though our event store treated those identities as separate streams, the projection code ran into the database's unique key violation. Fortunately most event store implementations use strings for identifying streams. For our legacy scenario, we decided to generate those GUIDs from the lowercase version of the identity. 
 
@@ -67,7 +68,7 @@ Well, we did learn from all of this and identified a couple of guidelines that m
 * Build infrastructure to extract individual streams or related streams for diagnostic purposes. 
 * Account for case sensitivity of aggregate identities. However, how you handle them depends on the event store implementation and underlying persistency store. 
 
-A lot of the problems described in this post have been the main driving force for us to invest in [LiquidProjections](https://github.com/liquidprojections/), a set of light-weight libraries for building various types of autonomous projectors. But that's a topic for another blog post…. 
+A lot of the problems described in this post have been the main driving force for us to invest in [LiquidProjections](https://github.com/liquidprojections/), a set of light-weight libraries for building various types of autonomous projectors. But that's a topic for another blog post.... 
 
 **What about you?** 
 
