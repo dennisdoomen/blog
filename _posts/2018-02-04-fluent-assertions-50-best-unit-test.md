@@ -115,7 +115,7 @@ using FluentAssertions;
 using FluentAssertions.Extensions;
 ```
 
-* `WithInnerException` returns the inner exception, so we removed `WithInnerMessage`. Just use `WithMessage` instead.</li></ul>
+* `WithInnerException` returns the inner exception, so we removed `WithInnerMessage`. Just use `WithMessage` instead.
 
 #### Sponsor us
 
