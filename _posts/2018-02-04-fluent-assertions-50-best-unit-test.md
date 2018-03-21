@@ -106,7 +106,7 @@ Additionally:
 
 ```csharp
 using FluentAssertions;
-``` 
+```
 
 to
 
@@ -119,7 +119,7 @@ using FluentAssertions.Extensions;
 
 #### Sponsor us
 
-If you check out the <a href="https://github.com/fluentassertions/fluentassertions/releases/tag/5.0.0">release notes</a>, you'll see that this release is quite big. But I could not have pulled this off without help from the community. First of all, a big shoutout goes to <a href="https://github.com/adamvoss">Adam Voss</a>, <a href="https://github.com/jnyrup">Jonas Nyrup</a> and <a href="https://github.com/krajek">Artur Krajewski</a> for helping me out finalizing this release. Next to that, I'm really thankful for the new logo provided by <a href="https://github.com/IUsername">Ben Palmer</a>. And finally, big thanks to <a href="https://www.jetbrains.com/">Jetbrains</a> for providing us with licenses for their new IDE, <a href="http://jetbrains.com/rider/download/">Rider</a>, as well as ReSharper. I honestly have not touched Visual Studio since I switched to Rider at the start of this project. 
+If you check out the [release notes](https://github.com/fluentassertions/fluentassertions/releases/tag/5.0.0), you'll see that this release is quite big. But I could not have pulled this off without help from the community. First of all, a big shoutout goes to [Adam Voss](https://github.com/adamvoss), [Jonas Nyrup](https://github.com/jnyrup) and [Artur Krajewski](https://github.com/krajek) for helping me out finalizing this release. Next to that, I'm really thankful for the new logo provided by [Ben Palmer](https://github.com/IUsername). And finally, big thanks to [Jetbrains](https://www.jetbrains.com/) for providing us with licenses for their new IDE, [Rider](http://jetbrains.com/rider/download/), as well as ReSharper. I honestly have not touched Visual Studio since I switched to Rider at the start of this project.
 
 And we need your help as well. Support us by becoming a sponsor at <a href="https://www.patreon.com/dennisdoomen">Patreon</a> or provide us with a one-time donation through <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&amp;SESSION=yMgzH0CK0Ym93cE-t-Rih4X7oubt81HNVywiN8gdixfP1CqCj1R1Vs3b_10&amp;dispatch=5885d80a13c0db1f8e263663d3faee8dc3f308debf7330dd8d0b0a9f21afd7d3&amp;rapidsState=Donation__DonationFlow___StateDonationLogin&amp;rapidsStateSignature=3c114d4cb78f27b4a9044dd076b6727af3341fec">Paypal</a>.
 
