@@ -69,6 +69,6 @@ Well, we did learn from all of this and identified a couple of guidelines that m
 
 A lot of the problems described in this post have been the main driving force for us to invest in [LiquidProjections](https://github.com/liquidprojections/), a set of light-weight libraries for building various types of autonomous projectors. But that's a topic for another blog post...
 
-**What about you?**
+#### What about you?
 
 Hopefully this will be my last post on the dark side of Event Sourcing, which means I'd love to know whether you recognize any of these problems. Did you run into any other noticeable issues? Or did you find alternative or better solutions? If so, let me know by commenting below. Oh, and follow me at [@ddoomen](https://twitter.com/ddoomen) to get regular updates on my everlasting quest for knowledge that significantly improves the way you build your projections in an Event Sourced world.
