@@ -1,7 +1,10 @@
 ---
 title: 'The Red Hot Developer - A model for removing distractions from your teams'
 tags:
-- team, development
+- team
+- development
+- agile
+- collaboration
 ---
 
 When your project, product or component gets sufficiently big that it has a large impact on the rest of the organization, you'll automatically get faced with lots of internal and external distractions. Other teams might want to get that pull request merged as soon as possible, all kinds of questions from sales and the project delivery people are piling up in Slack, and that occasionally failing UI automation build is also asking for some attention. And what about those weird errors in the log files and compile-time warnings that everybody keeps ignoring. Sure, we have a healthy amount of capacity reserved for technical improvements and reducing technical debt, but they tend to be used for the bigger things. 
