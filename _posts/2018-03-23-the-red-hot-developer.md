@@ -9,7 +9,7 @@ tags:
 
 When your project, product or component gets sufficiently big that it has a large impact on the rest of the organization, you'll automatically get faced with lots of internal and external distractions. Other teams might want to get that pull request merged as soon as possible, all kinds of questions from sales and the project delivery people are piling up in Slack, and that occasionally failing UI automation build is also asking for some attention. And what about those weird errors in the log files and compile-time warnings that everybody keeps ignoring. Sure, we have a healthy amount of capacity reserved for technical improvements and reducing technical debt, but they tend to be used for the bigger things. 
 
-![](/assets/images/posts/2018-03-23-pepper.jpg)
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2018-03-23-pepper.jpg" class="align-center" style="width:300px"/>
 
 During [QCon New York](https://continuousimprover.com/tags/#qcon), I got introduced to the concept of the **Red Hot Developer** (or RHD for short), a (preferably) daily rotating dedicated developer that keeps distractions away from the rest of the team. He or she will investigate any failing builds and find the person who caused it, and try to find the answers for the questions those project people keep asking. Since the RHD is fully allocated to that task for the entire day, he (or she) may pick up some of those smaller left-overs. A typical day of being the RHD looks a little bit like this:
 
