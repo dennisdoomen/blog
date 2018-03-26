@@ -98,6 +98,7 @@ The changes to `BeEquivalentTo` will be the most visible ones:
 * Disabling auto-conversion may cause some tests to fail because different types used to be convertible. Fix the expectation or use the `WithAutoConversionFor` option.
 * Your tests may fail because of `BeEquivalentTo` reporting missing properties. This is caused by the expectation object being the driving factor for the structural comparison. Use `Including` or `Excluding` to fix that.
 * They may also fail because the expectation doesn't define any properties. This is often a signal that you pass in an abstract type as the expectation. Change the expectation or use the `IncludeAllRuntimeProperties` option.
+* Another reason that might cause problems is that the object being asserted doesn't implement `Equals` by providing the value semantics that Fluent Assertions is [expecting](#redefining-equivalency).
 * Use `WithTracing` to understand how FA has evaluated your object graph.
 
 Additionally:
