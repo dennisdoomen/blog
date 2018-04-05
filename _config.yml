@@ -13,7 +13,7 @@ title                    : "The Continuous Improver"
 title_separator          : "-"
 name                     : "Dennis Doomen"
 description              : "On an everlasting quest for better solutions"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://www.continuousimprover.com"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : dennisdoomen/dennisdoomen.github.io
 github                   : dennisdoomen/dennisdoomen.github.io
