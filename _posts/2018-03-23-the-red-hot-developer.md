@@ -1,5 +1,7 @@
 ---
 title: 'The Red Hot Developer - A model for removing distractions from your teams'
+header:
+  teaser: "/assets/images/posts/2018-03-23-pepper.jpg"
 tags:
 - team
 - development

@@ -2,15 +2,9 @@
 main:
   - title: "Home"
     url: "/"
-  - title: "Aviva Solutions"
-    url: https://www.avivasolutions.nl
   - title: "Fluent Assertions"
     url: http://fluentassertions.com/
   - title: "C# Coding Guidelines"
     url: http://csharpcodingguidelines.com/
   - title: "Liquid Projections"
     url: https://github.com/liquidprojections
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/

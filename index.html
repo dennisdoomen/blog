@@ -1,5 +1,25 @@
 ---
-layout: home
-author_profile: true
-sidebar: 
+title: "The Continuous Improver"
+layout: splash
+header:
+  overlay_color: "#373737"
+  overlay_filter: "0.8"
+  overlay_image: "/assets/images/avivasolutions.png"
+  caption: "Powered by [**Aviva Solutions**](http://avivasolutions.nl)"
+excerpt: 'On an everlasting quest for knowledge that significantly improves the way you build your key systems in an agile world.<br/>
+ <br /> 
+
+[<i class="fab fa-twitter"/> @ddoomen](https://twitter.com/ddoomen){: .btn .btn--twitter} 
+[<i class="fab fa-github"/> Github](https://github.com/dennisdoomen){: .btn .btn--github}
+[<i class="fab fa-stack-overflow"/> StackOverflow](https://stackoverflow.com/users/253961/dennis-doomen){: .btn .btn--stackoverflow} 
+[<i class="fab fa-linkedin"/> LinkedIN](https://www.linkedin.com/in/dennisdoomen/){: .btn .btn--linkedin} 
+'
 ---
+
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+
+{% for post in paginator.posts %}
+  {% include archive-single.html type=grid %}
+{% endfor %}
+
+{% include paginator.html %}
