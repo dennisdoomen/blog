@@ -9,7 +9,7 @@
 .sidebar {
   @include clearfix();
   margin-bottom: 1em;
-  background-color: $header-color;
+  background-color: #343434;
   padding: 16px;
 
   @include breakpoint(max-width $large) {
