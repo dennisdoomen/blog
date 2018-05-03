@@ -1,5 +1,5 @@
 ---
-title: 'Don't blame the dependency injection framework'
+title: "Don't blame the dependency injection framework"
 header:
   teaser: "/assets/images/posts/2018-05-02_example.png"
 tags:
@@ -14,7 +14,7 @@ Over the last couple of months I've heard and read quite a few statements that s
 ## Why do people use them
 Consider the (contrived) diagram below. 
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2018-05-02_example.png" class="align-center" style="width:300px"/>
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2018-05-02_example.png" class="align-center" />
 
 In a design like this, I can think of several reasons why developers decide to use a dependency injection framework. For one, they may want to promote developers designing their classes in such a way that they only depend on abstractions (1). This is a good thing in my opinion, since depending on things that are [more stable](https://www.continuousimprover.com/2016/10/principles-for-successful-package.html) helps prevent the ripple effect. And since an abstraction is more stable than an implementation, we're good. A nice side-effect of all of this is that it allows you to switch out one implementation with another (2), also known as the [Strategy Pattern](https://en.wikipedia.org/wiki/Strategy_pattern). This works particularly well if you need to have your unit tests work against a test-friendly implementation (4) of that abstraction. And don't forget a system that likes to dynamically load implementations (a.k.a. plug-ins) from external modules (6). 
 
@@ -32,7 +32,7 @@ Before we talk about how to do dependency injection the right way, I think I nee
 
 However, a lot of people still think that the 'D' in SOLID means _dependency injection_ as well. However, the 'D' stands for the _Dependency Inversion Principle_ (or DIP for short), which is orthogonal to the concepts I just explained. DIP talks about reversing the dependency between objects in such a way that higher-level abstractions don't depend on lower-level abstractions. The idea behind that is that lower-level abstractions tend to be more generic and reusable, and therefor are more susceptible to change. This is also one of principles behind [successful package management](https://www.continuousimprover.com/2016/10/principles-for-successful-package.html) (which happens to be inspired by SOLID as well). As an example, consider the differences between the left and right side of the picture:
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2018-05-02_dip.png" class="align-center" style="width:300px"/>
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2018-05-02_dip.png" class="align-center" />
 
 Although they seem to be similar, there's a subtle difference. The left side defines a pretty generic `IStoreOrders<T>` interface that is owned by something that probably in the data layer. Based on the name I assume it will define general purpose methods for creating, deleting and querying orders. Notice that the dependency flows from the Order Processing module, a higher-level abstraction, to the `IStoreOrders` interface, a lower-level abstraction. That also means that the implementation of that interface can't really make any assumptions about what the caller tries to accomplish. You can, of course, add more functional methods to that interface (such as is depicted on the right side), but that probably means the abstraction will end up having a huge number of methods. 
 
