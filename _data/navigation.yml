@@ -1,10 +1,8 @@
 # main links
 main:
-  - title: "Home"
-    url: "/"
   - title: "Fluent Assertions"
-    url: http://fluentassertions.com/
+    url: https://fluentassertions.com/
   - title: "C# Coding Guidelines"
-    url: http://csharpcodingguidelines.com/
+    url: https://csharpcodingguidelines.com/
   - title: "Liquid Projections"
-    url: https://github.com/liquidprojections
+    url: https://www.liquidprojections.net
