@@ -91,7 +91,7 @@ delegate Task<ExceptionResolution> HandleException(
     CancellationToken cancellationToken)
 ```
 
-This method allows you to decide how to deal with a particular exception. For instance, if the exception type denotes some kind of recoverable error, you can decide to return `ExceptionResolution.Retry` for the first few `attempts`, and then abort the attempts by returning `ExceptionResolution.Abort`. Since the signature is `async` all the way, you can even implement a simple [exponential back-off algorithm]{https://dzone.com/articles/understanding-retry-pattern-with-exponential-back} by adding something like this:
+This method allows you to decide how to deal with a particular exception. For instance, if the exception type denotes some kind of recoverable error, you can decide to return `ExceptionResolution.Retry` for the first few `attempts`, and then abort the attempts by returning `ExceptionResolution.Abort`. Since the signature is `async` all the way, you can even implement a simple [exponential back-off algorithm](https://dzone.com/articles/understanding-retry-pattern-with-exponential-back) by adding something like this:
 
 ```csharp
 await Task.Delay(TimeSpan.FromSeconds(attempts ^ 2));
