@@ -17,3 +17,5 @@ npm-debug.log*
 \.idea/\.idea\.dennisdoomen\.github/
 
 *.user
+
+*.bak
