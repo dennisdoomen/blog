@@ -31,7 +31,7 @@ private async Task<ExceptionResolution> OnException(ProjectionException exceptio
         // entire batch of transactions. Maybe the exception resolves by itself. Otherwise just abort.
         if (attempts < 3)
         {
-            await Task.Delay(TimeSpan.FromSeconds(attempts ^ 2));
+            await Task.Delay(TimeSpan.FromSeconds(Math.Pow(2, attempts)));
 
             return ExceptionResolution.Retry;
         }
