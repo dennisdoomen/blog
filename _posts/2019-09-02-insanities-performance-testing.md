@@ -1,5 +1,5 @@
 ---
-title: "The (in)sanities of performance testing web applications"
+title: "The (in)sanity of performance testing web applications"
 excerpt: "Learn about the functional and technical challenges of achieving realistic and useful performance tests."
 tags:
 - testing
