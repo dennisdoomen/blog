@@ -1,0 +1,60 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-family !important;
+  font-weight: 900 !important;
+  color: $black !important;
+}
+
+h1 {
+  font-size: 45px !important;
+  line-height: 56px !important;
+}
+
+h2 {
+  font-size: 21px !important;
+  line-height: 31px !important;
+}
+
+p {
+  font-size: 16px !important;
+  line-height: 32px !important;
+}
+
+.page__meta {
+  font-size: 12px !important;
+  font-weight: bold;
+  line-height: 16px !important;
+}
+
+.page__footer {
+  background-color: $blue;
+}
+
+.sidebar {
+  border-radius: 16px;
+  background-color: $blue;
+  color: $white;
+
+  .author__avatar {
+    img {
+      border-color: $white;
+    }
+  }
+
+  .author__name {
+    font-size: 20px;
+  }
+}
+
+.greedy-nav__toggle {
+  background-color: $blue;
+}
+
+.search-content {
+  .archive__item {
+    width: 75% !important;
+    margin: 20px 0 !important;
+  }
+}

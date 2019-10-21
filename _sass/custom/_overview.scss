@@ -1,0 +1,23 @@
+.page {
+  &__content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .archive__subtitle {
+      width: 100%;
+      margin-bottom: 40px;
+      flex-wrap: nowrap;
+    }
+
+    .list__item {
+      width: 100%;
+      margin: 10px 0;
+
+      @media (min-width: 576px) {
+        width: calc(100% / 3 - 20px);
+        margin: 10px;
+      }
+    }
+  }
+}
