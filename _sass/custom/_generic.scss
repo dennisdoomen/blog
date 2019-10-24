@@ -17,15 +17,46 @@ h2 {
   line-height: 31px !important;
 }
 
-p {
+p,
+.page__lead {
+  font-family: $font-family;
   font-size: 16px !important;
   line-height: 32px !important;
+
+  a {
+    font-weight: bold;
+    color: $blue !important;
+
+    &:hover {
+      color: darken($blue, 20) !important;
+    }
+  }
+
+  .btn {
+    color: $white !important;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+
+  .page__taxonomy-item {
+    border-color: $blue;
+    font-weight: normal;
+    color: $black !important;
+
+    &:hover {
+      background-color: $blue;
+      color: $white !important;
+    }
+  }
 }
 
 .page__meta {
   font-size: 12px !important;
   font-weight: bold;
   line-height: 16px !important;
+  color: $blue !important;
 }
 
 .page__footer {
