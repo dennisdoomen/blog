@@ -1,15 +1,18 @@
 name: Rebuild Algolia Index
-on: push
-push:
-    branches:
-      - master
-steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '2.4' # Version range or exact version of a Ruby version to use, using semvers version range syntax.
-      env:
-        ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-    - run: |
-        gem install bundler
-        bundle exec jekyll algolia
+on: 
+    push:
+        branches:
+          - master
+jobs:
+    refresh-index:
+        runs-on: ubuntu-16.04
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-ruby@v1
+              with:
+                ruby-version: '2.4' # Version range or exact version of a Ruby version to use, using semvers version range syntax.
+              env:
+                ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+            - run: |
+                gem install bundler
+                bundle exec jekyll algolia
