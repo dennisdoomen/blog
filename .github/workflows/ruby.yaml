@@ -5,13 +5,16 @@ jobs:
         name: Refresh Algolia Index
         runs-on: ubuntu-16.04
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-ruby@v1
+            - name: Checkout Sources
+              uses: actions/checkout@v2
+            - name: Setup Ruby
+              uses: actions/setup-ruby@v1
               with:
                 ruby-version: '2.4' # Version range or exact version of a Ruby version to use, using semvers version range syntax.
-              env:
-                ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-            - run: |
+            - name: Run Jekyll
+              env: ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+              run: |
                 gem install bundler
                 bundle install
                 bundle exec jekyll algolia
+  
