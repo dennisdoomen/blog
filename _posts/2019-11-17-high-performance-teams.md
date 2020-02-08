@@ -1,6 +1,6 @@
 ---
 title: "Real-world challenges and solutions for building high-performance teams"
-excerpt: "The open-space format gives you a chance to hear about other people's challenges and how other experienced folks respond to that. I attended one on building high-performance teams."
+excerpt: "The open-space format gives you a chance to hear about other people's challenges and how other experienced folks respond to that. I attended one on building high-performance teams. "
 tags:
 - culture
 - team-performance
