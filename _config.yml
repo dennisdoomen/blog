@@ -53,14 +53,16 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
 search                   : true
-search_full_content      : true # true, false (default)
-search_provider          : algolia
+search_full_content      : true
+search_provider          : "algolia"
 
 algolia:
   application_id: MZ640YN3C2
   index_name: ContinuousImprover
   search_only_api_key: 6e82ba66cfd0897a66f86582cabdbc1f
   powered_by: true
+  files_to_exclude:
+    - _posts/*.html
 
 # SEO Related
 google_site_verification :
