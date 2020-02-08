@@ -55,11 +55,10 @@ atom_feed:
 search                   : true
 search_full_content      : true
 search_provider          : "algolia"
-
 algolia:
-  application_id: MZ640YN3C2
-  index_name: ContinuousImprover
-  search_only_api_key: 6e82ba66cfd0897a66f86582cabdbc1f
+  application_id: "MZ640YN3C2"
+  index_name: "ContinuousImprover"
+  search_only_api_key: "6e82ba66cfd0897a66f86582cabdbc1f"
   powered_by: true
   files_to_exclude:
     - _posts/*.html
@@ -203,6 +202,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jemoji
+  - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:
