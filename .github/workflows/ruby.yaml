@@ -12,7 +12,8 @@ jobs:
               with:
                 ruby-version: '2.4' # Version range or exact version of a Ruby version to use, using semvers version range syntax.
             - name: Run Jekyll
-              env: ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+              env: 
+                ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
               run: |
                 gem install bundler
                 bundle install
