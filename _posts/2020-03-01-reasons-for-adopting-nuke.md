@@ -278,7 +278,7 @@ NSpec3(TestFrameworkDirectory / "NSpec3.Net47.Specs" / "bin" / "Debug" / "net47"
 What Nuke does is override the `/` operator on an `AbsolutePath` type so that you can build up a complicated path definition without bothering with the dreaded `Path.Combine` or `StringBuilder` class. It really removes a lot of noise from your build scripts. 
 
 ## Is it all sunshine and rainbows?
-Well, the dependency model is very different from other comparable build tools, so converting existing build scripts can be quite a challenge. But after you do, like me, you'll never look back. I can't think of a single thing that Cake, BullsEye or PSake does better. But don't believe me on my blue eyes. Try it yourself or check out the build script of my pet project Fluent Assertions. 
+Well, the dependency model is very different from other comparable build tools, so converting existing build scripts can be quite a challenge. But after you do, like me, you'll never look back. I can't think of a single thing that Cake, BullsEye or PSake does better. But don't believe me on my blue eyes. Try it yourself or check out [the build script](https://github.com/fluentassertions/fluentassertions/blob/develop/Build/Build.cs#L16) of my pet project [Fluent Assertions](https://fluentassertions.com/). 
 
 So what do you think? What is your experience with build automation tools? Let me know by commenting below. Oh, and follow me at [@ddoomen](https://twitter.com/ddoomen) to get regular updates on my everlasting quest for suggestions and ideas to become a better professional.
 
