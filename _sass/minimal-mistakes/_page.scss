@@ -78,6 +78,10 @@
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
   }
+
+  h3 {
+    flex-basis: 100%;
+  }
   
   h4 {
     color: $header-color;
