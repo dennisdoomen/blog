@@ -21,7 +21,7 @@ A couple of weeks ago I ended up in a technical debate on how to take an existin
 
 **Don't use the domain events as a communication mechanism between domains or services**. Event Sourcing is an implementation of a specific domain (or bounded context in DDD terms). Use more coarse-grained events for inter-domain communication, for instance by projecting the domain events into higher level events that are pushed to a message bus or API gateway.
 
-**Don't change the events just to optimize the protection speed**. The whole point of [CQRS](https://www.slideshare.net/dennisdoomen/practical-introduction-to-ddd-cqrs-and-event-sourcing) is that you separate the conflict of interest between the command side (the domain) and the query side (the projections). The aggregates and events change when the business domain changes. The projections change when the display/query needs change. 
+**Don't change the events just to optimize the projection speed**. The whole point of [CQRS](https://www.slideshare.net/dennisdoomen/practical-introduction-to-ddd-cqrs-and-event-sourcing) is that you separate the conflict of interest between the command side (the domain) and the query side (the projections). The aggregates and events change when the business domain changes. The projections change when the display/query needs change. 
 
 **Do be explicit about what information you want to keep in events based on functional requirements**. So if you need the full name of the user that signed a document at the time of signing, make it part of the event. If you just need the latest full name, project the relevant events. 
 
