@@ -7,7 +7,7 @@ tags:
 - architecture
 ---
 
-A couple of weeks ago I ended up in a technical debate on how to take an existing Event Sourced application further to fully reap the benefits it is designd to give you. I've written [many posts] about the pitfalls, the best practices and how to implement this in .NET specifically. But I still thought it might be useful to provide you with a list of the most important guidelines and heuristics that I think are needed to be successful with Event Sourcing. 
+A couple of weeks ago I ended up in a technical debate on how to take an existing Event Sourced application further to fully reap the benefits it is designed to give you. I've written [many posts] about the pitfalls, the best practices and how to implement this in .NET specifically. But I still thought it might be useful to provide you with a list of the most important guidelines and heuristics that I think are needed to be successful with Event Sourcing. 
 	
 **Don't use Event Sourcing unless you have a complex domain** that has to deal with a lot of users working together on the same entities. You don't need Event Sourcing just for building an audit log. And maybe a document DB or classic CRUD solution can work for you just as well.
 
@@ -33,7 +33,7 @@ A couple of weeks ago I ended up in a technical debate on how to take an existin
 
 **Do be careful that under load**, queuing the SQL-based event store based on a global check point might cause you to miss events [due to in-flight transactions](https://www.continuousimprover.com/2017/11/the-ugly-of-event-sourcingreal-world.html#things-you-would-never-expect-they-could-happen). Use a back-off window or serialize writes to the event store per partition to work around that.
 
-**Do treat rebuilding a protection as a special state** by having the projector mark itself as being rebuild and expose its [progress as ETA](https://liquidprojections.net/getting-started/#collecting-statistics-and-predicting-progress) and such. A smart projector also detects if the event store was rolled back to an earlier state (because of a database restore or a production patch), and will rebuild itself automatically.
+**Do treat rebuilding a projection as a special state** by having the projector mark itself as being rebuild and expose its [progress as ETA](https://liquidprojections.net/getting-started/#collecting-statistics-and-predicting-progress) and such. A smart projector also detects if the event store was rolled back to an earlier state (because of a database restore or a production patch), and will rebuild itself automatically.
 
 **Do whatever you can to make rebuilding fast**. Use aggressive caching, use a NoSQL database, project in-memory and in batches and then write to the database, project stream by steam if that makes sense for the projection, read from the event store in batches (and [be smart about exception handling](https://liquidprojections.net/exception-handling/)), use an ORM and [benefits from its unit of work](https://liquidprojections.net/nhibernate/) to reduce SQL statements, anything. You can even stop projecting events for aggregates that are no longer relevant for that projector, for instance, by adding metadata to the event store that all events of a particular aggregate (stream) are archivable. 
 
