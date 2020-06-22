@@ -7,7 +7,7 @@ tags:
 - architecture
 ---
 
-A couple of weeks ago I ended up in a technical debate on how to take an existing Event Sourced application further to fully reap the benefits it is designd to give you. I've written [many posts] about the pitfalls, the best practices and how to implement this in .NET specifically. But I still thought it might be useful to provide you with a list of the most important guidelines and heuristics that I think are needed to be successful with Event Sourcing. 
+A couple of weeks ago I ended up in a technical debate on how to take an existing Event Sourced application further to fully reap the benefits it is designed to give you. I've written [many posts] about the pitfalls, the best practices and how to implement this in .NET specifically. But I still thought it might be useful to provide you with a list of the most important guidelines and heuristics that I think are needed to be successful with Event Sourcing. 
 	
 **Don't use Event Sourcing unless you have a complex domain** that has to deal with a lot of users working together on the same entities. You don't need Event Sourcing just for building an audit log. And maybe a document DB or classic CRUD solution can work for you just as well.
 
