@@ -1,5 +1,5 @@
 ---
-title: "15 design guidelines for successful Event Sourcing"
+title: "16 design guidelines for successful Event Sourcing"
 excerpt: "I've written many posts about the strengths and weaknesses of Event Sourcing, but I still thought it might be useful to provide you with a list of the most important guidelines and heuristics that I think are needed to be successful with Event Sourcing"
 tags:
 - event-sourcing
@@ -9,15 +9,17 @@ tags:
 
 A couple of weeks ago I ended up in a technical debate on how to take an existing Event Sourced application further to fully reap the benefits it is designed to give you. I've written [many posts] about the pitfalls, the best practices and how to implement this in .NET specifically. But I still thought it might be useful to provide you with a list of the most important guidelines and heuristics that I think are needed to be successful with Event Sourcing. 
 	
-**Don't use Event Sourcing unless you have a complex domain** that has to deal with a lot of users working together on the same entities. You don't need Event Sourcing just for building an audit log. And maybe a document DB or classic CRUD solution can work for you just as well.
+**Don't use Event Sourcing unless you have a complex domain** that has to deal with a lot of users working together on the same entities. You don't need Event Sourcing just for building an audit log. And even if you do use Event Sourcing, you may not need it for everything. Quite often, master data can be handled using versioned schemas just as well. But then again, for smaller teams, having a single paradigm might be better. But don't ignore NoSQL as an alternative to Event Sourcing. 
 
-**Do model your aggregates around invariants** instead of business concepts or the data model. See Vaughn Vernon's 3-part series called [Effective Aggregate Design](https://dddcommunity.org/library/vernon_2011/) to learn more about this. And also consider using [Event Storming](https://www.eventstorming.com/). It's great to focus on the business process instead of the data model
+**Do model your aggregates around invariants** instead of business concepts or the data model. But be careful that you choose which invariants the system must protect and which of them can be resolved using a more functional approach (or cross-aggregate transactions). If you don't, you'll end up with a monstrous aggregate. Vaughn Vernon's 3-part series called [Effective Aggregate Design](https://dddcommunity.org/library/vernon_2011/) dives into that. 
 
 **Don't be dogmatic about cross-aggregate transactions**. Only if you really need the performance and concurrency, force yourself to only touch one aggregate per transaction. Otherwise keep it pragmatic. The complexity of protecting cross-aggregate business rules without the transaction logic can be quite challenging and is usually not worth it. 
 
 **Do assign a (natural) partition key to each aggregate**, so that if you ever need it to split your event store because of performance or storage concerns, you can. 
 
 **Do treat the event store as one big audit log** of what happened in the business and never change or reorder events. Ensure that you can unambiguously point to a place in the event store and see which events happens after that check point number. This can be of good use for distributed event store and [blue/green deployments](https://www.slideshare.net/dennisdoomen/event-sourcing-from-the-trenches-ddd-europe-2020) with incremental data migration. But being able to diagnose a production issue from the event store has been crucial to us over the many years we've been using Event Sourcing ourselves.
+
+**Don't treat events as a way to capture property changes**. This so-called *property-sourcing* is a smell that is often seen when the developers treat Event Sourcing as a technical solution without thoroughly understanding the business domain and/or involving people from the business. Consider using [Event Storming](https://www.eventstorming.com/) or [Event Modeling](https://eventmodeling.org/about/) as techniques to map out your business process instead of focusing on data models.
 
 **Don't use the domain events as a communication mechanism between domains or services**. Event Sourcing is an implementation of a specific domain (or bounded context in DDD terms). Use more coarse-grained events for inter-domain communication, for instance by projecting the domain events into higher level events that are pushed to a message bus or API gateway.
 
@@ -37,7 +39,7 @@ A couple of weeks ago I ended up in a technical debate on how to take an existin
 
 **Do whatever you can to make rebuilding fast**. Use aggressive caching, use a NoSQL database, project in-memory and in batches and then write to the database, project stream by steam if that makes sense for the projection, read from the event store in batches (and [be smart about exception handling](https://liquidprojections.net/exception-handling/)), use an ORM and [benefits from its unit of work](https://liquidprojections.net/nhibernate/) to reduce SQL statements, anything. You can even stop projecting events for aggregates that are no longer relevant for that projector, for instance, by adding metadata to the event store that all events of a particular aggregate (stream) are archivable. 
 
-**Don't ever join data from multiple projections**, unless you know that this is safe considering the actuality and asynchronicity of each projector. But if you do, have the projector that owns the projection maintain its own private lookup based on the events of other aggregates. 
+**Don't join data from multiple projections**, unless you know that this is safe considering the actuality and asynchronicity of each projector. If you do need to capture information from other aggregates, have the projector that owns the projection maintain its own private lookup based on the events of those aggregates. Another example of an exception would be the case where you build a data warehouse from your events, but even then you need to consider the trade-off of consistency.
 
 **Do test the entire projector as a unit of testing**, with events coming in and query results or HTTP APIs as output. Treat the projector itself and the way it stores its projections as an implementation detail that can change over time. See an example of how to build such a test in a functional and readable way [here](https://github.com/dennisdoomen/EffectiveTddDemo/blob/master/Tests/DocumentManagement.Specs/13_SimplerDeserialization/StatisticsControllerSpecs.cs#L53). 
 
