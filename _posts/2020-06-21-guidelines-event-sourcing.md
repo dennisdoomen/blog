@@ -1,6 +1,6 @@
 ---
-title: "16 design guidelines for successful Event Sourcing"
-excerpt: "I've written many posts about the strengths and weaknesses of Event Sourcing, but I still thought it might be useful to provide you with a list of the most important guidelines and heuristics that I think are needed to be successful with Event Sourcing"
+title: "16 practical design guidelines for successful Event Sourcing"
+excerpt: "I've written many posts about the strengths and weaknesses of Event Sourcing, but I still thought it might be useful to provide you with a list of the most important practical guidelines and heuristics that I think are needed to be successful with Event Sourcing"
 tags:
 - event-sourcing
 - projections
