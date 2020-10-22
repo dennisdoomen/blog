@@ -6,7 +6,7 @@ tags:
 - software-architecture
 ---
 
-Recently, at a tech conference in the Netherlands, I had a discussion with some folks on what being a software architect really means. Some people see it as some kind of authority that makes all the decisions about what the architecture should look like and what technical guidelines should be used. Others treat them as the folks that draw PowerPoint pictures from their ivory towers. And the most negative developers see them as an impediment for any kind of creativity. This triggered me to try to capture how the many hats a software architect must wear.
+Recently, at a tech conference in the Netherlands, I had a discussion with some folks on what being a software architect really means. Some people see it as some kind of authority that makes all the decisions about what the architecture should look like and what technical guidelines should be used. Others treat them as the folks that draw PowerPoint pictures from their ivory towers. And the most negative developers see them as an impediment for any kind of creativity. This triggered me to try to capture the many hats a software architect must wear.
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2020-10-22/stephen-hocking-unsplash.jpg" class="align-center"/> 
 
