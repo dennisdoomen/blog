@@ -6,14 +6,14 @@ The future home of <http://www.continuousimprover.com/>.
 
 ### Prerequisites
 
-* Ruby 2.4.x (note: 2.5 and higher may fail due to the `ffi` ruby lib only supporting < 2.5). An easy way to install is to use `choco install ruby --version 2.4.3.1`  
+* Ruby 2.4.x (note: 2.5 and higher may fail due to the `ffi` ruby lib only supporting < 2.5). 
+* An easy way to install it is to download `Ruby+Devkit 2.4.10-1 (x64)` from the [RubyInstaller site](https://rubyinstaller.org/downloads/) and run option 3 from the msys install menu.
 * The `bundler` gem (`gem install bundler`). If you receive SSL-related errors while running `gem install`, try running `refreshenv` first. 
 
 ### Building
 
 * Clone this repository
 * `cd` into the root of the repository
-* Install the Ruby Devkit using `ridk install` followed by option 3.
 * Run `bundle install`. 
 * Run `bundle exec jekyll serve`. To have it monitor your working directory for changes, add the `--incremental` option. 
 
