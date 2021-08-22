@@ -8,6 +8,8 @@ tags:
 - fluent-assertions
 ---
 
+**Update August 22th, 2021:** 6.1 was shipped with important performance fixes and a version of FluentAssertions.JSON compatible with v6 was also released.
+
 ## A true story
 Once upon a time in a small country called The Netherlands, a little open-source project was born. It must have been 2008 and open-source in the .NET community was still in its infancy. CodePlex was still a thing and NuGet did not exist yet. Fast-forward to 2021 and this little project has attracted [more than 100 million downloads](https://www.nuget.org/packages/FluentAssertions/) and is being used in [more projects](https://nugetmusthaves.com/Dependency/FluentAssertions) than I can keep track off. 
 
