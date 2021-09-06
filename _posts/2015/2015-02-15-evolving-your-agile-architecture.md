@@ -1,0 +1,27 @@
+---
+
+title: Evolving your agile architecture without losing any people
+date: '2015-02-15T21:39:00.001+01:00'
+
+tags:
+- Agile
+- Architecture
+modified_time: '2015-06-24T11:42:02.243+02:00'
+---
+
+I'm a big fan of just-in-time architecture (a.k.a. agile architecture) because it prevents me from trying to predict the future which, frankly, I suck at. So, although I generally start out with a reference architecture, a lot of changes happen after that point, when the functional requirements gain more clarity. If you're working with a couple of developers, you don't need do much to keep everybody up-to-date. But if, like us, your organization is comprising of numerous teams, that quickly becomes a challenge. Even though all developers get a thorough introduction to the high-level architecture and its most important principles, we need some way to convey those changes. This is how we do it…  
+
+One of the first practices we introduced was to send an email for every architectural change and copy those into a kind of change log on [OneNote](http://www.slideshare.net/dennisdoomen/little-productivity-tools-every-developer-should-use). This worked reasonably well for reference purposes, but we discovered that not all developers read all these emails. Unfortunately, scanning through a single OneNote package wasn't practical either even though OneNote has a pretty brilliant indexing engine. After inquiring on why some developers never read the emails, we learned that this caused too much of a context switch from them.  
+
+Regardless, a lot of people kept thinking their time is wasted on those emails. In a way, we were really emulating a blog of some sort. So why not use a real blog? And indeed, that's what we have been doing for a year now. All these architectural changes are now posted online with clear categories and version tracking. This gives the developers the freedom to manually track the blog, use an RSS feed, set-up an email alert, or get a notification through Flowdock.  
+
+Another more direct technique for sharing architectural changes are tech sessions and architecture forum meetings. The former is used to share upcoming architectural changes and do presentations on current technical projects. The latter is more like an open forum (hence the name) where developers can submit particular topics which they feel need further clarification. This is also the place where we gauge new ideas, discuss new coding and design guidelines or have discussions to resolve disputes on certain solutions. I myself tend to use them to discuss design mistakes, coding errors and similar issues that I ran into while doing ad-hoc code reviews.  
+
+Within the organization we have the notion of a subsystem owner or SSO for short, a developer who's skills align well with certain aspects of our code base and who is freed up for a half a day a week to safeguard that aspect. For instance, the JavaScript SSO knows everything about writing high-performance memory-safe JavaScript as well as writing Jasmine unit tests. So ideally, he scrutinizes all JavaScript code written within a project. However, most of the SSOs are relying on somebody pinging them for questions and don't feel they have time to just start doing some ad-hoc reviews.  
+
+That's why [pull requests](https://help.github.com/articles/using-pull-requests/) on Github are such a nice principle. Whoever reviews the PR can easily refer to an SSO by using that person's handle, thereby making sure the right people get a notification. For all new components and GitHub repositories the use of PRs is already required and it's just a matter of time until all repositories are government by this pull request ruling.  
+Ideally, you would like to capture certain architectural violations while a developer is still coding. Some kind of static code analysis can help, but is usually limited to proper use of the .NET framework. Because that would just [slow down compilation](http://lostechies.com/chadmyers/2008/07/16/project-anti-pattern-many-projects-in-a-visual-studio-solution-file/), we don't use Visual Studio projects to separate architectural layers. Instead, we've been introducing [NDepend](http://www.ndepend.com/) as a means to detect certain violations as part of the CI build. The learning curve is a bit on the high side, but there are plenty of samples you can start from. And the beauty is that you can include NDepend analysis in your CI builds (which our developers can run from their development box thanks to [PSake](https://github.com/psake/psake)) so early feedback is guaranteed.  
+
+So what happens if a developer doesn't know who to address? Or what if he can't find that particular blog post he remembered reading about that particular topic? That's when [Flowdock](http://www.continuousimprover.com/2015/01/how-flowdock-helps-you-get-better-cross.html) comes in handy. We have specific flows per topic where he or she can ask for help, guidance or ideas. And if someone doesn't know the specific flow to post in, there's always the development flow for general-purpose development discussions. I often use Flowdock to read back on the original discussion that happened before a certain design decision was made.  
+
+So what do you do keep your fellow developers up-to-date on an evolving agile architecture? Let me know by commenting below or by tweeting me at [@ddoomen](https://twitter.com/ddoomen).
