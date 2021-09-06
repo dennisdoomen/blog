@@ -12,7 +12,7 @@ blogger_orig_url: http://www.continuousimprover.com/2015/11/an-opinionated-defin
 ---
 
 During the same C# code reviews that triggered last week's blog post about writing 
-[great unit tests]({{ site.baseurl }}{% post_url 2015-11-11-12-tips-to-write-unit-tests-that-dont %}), another discussion tends to pop-up, in particularly with new joiners (both experienced and junior): 
+[great unit tests]({{ site.baseurl }}{% post_url 2015/2015-11-11-12-tips-to-write-unit-tests-that-dont %}), another discussion tends to pop-up, in particularly with new joiners (both experienced and junior): 
 
 > "What's the difference between a unit test and an integration test?"
 

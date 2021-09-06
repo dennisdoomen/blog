@@ -8,7 +8,7 @@ tags:
 - qcon
 ---
 
-This year's trip to San Francisco marks the 7th time I attended a QCon conference. Unfortunately the editions in New York in San Francisco do not add up, so this time was counted as the 4th time, making me eligible for a nice alumni t-shirt and a pair of socks. Nonetheless, after a slightly disappointing experience at [another conference last year]({{ site.baseurl }}{% post_url 2018-11-11-colorful-model %}), this edition was once again full of little gems. For instance, [Josh Evans](https://www.linkedin.com/in/zen-tek/) shared his ideas on how to align the needs of individual engineers with the needs of the business. 
+This year's trip to San Francisco marks the 7th time I attended a QCon conference. Unfortunately the editions in New York in San Francisco do not add up, so this time was counted as the 4th time, making me eligible for a nice alumni t-shirt and a pair of socks. Nonetheless, after a slightly disappointing experience at [another conference last year]({{ site.baseurl }}{% post_url 2018/2018-11-11-colorful-model %}), this edition was once again full of little gems. For instance, [Josh Evans](https://www.linkedin.com/in/zen-tek/) shared his ideas on how to align the needs of individual engineers with the needs of the business. 
 
 {% include figure image_path="/assets/images/posts/2019-11-13-passion.jpg" class="align-center" %}
 

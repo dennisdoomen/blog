@@ -9,7 +9,7 @@ tags:
 modified_time: '2015-01-14T19:58:22.123+01:00'
 ---
 
-It has been more than [two years]({{ site.baseurl }}{% link _posts/2011-09-28-silverlight-cookbook-switching-to.html %}) since we switched from Microsoft Unity to [Autofac](https://autofac.org/) and we haven't regretted this a single day. Not only is the resolution performance much better than Unity, but it’s the feature set, in particular the relation types, that makes a world of difference. In terms of concurrency, there's not much to think about it. Autofac's concurrency model has been designed to be thread-safe from the ground up. In fact, there's only a single scenario in where you have to be careful what you do. And that's exactly where we went wrong… 
+It has been more than [two years]({{ site.baseurl }}{% link _posts/2011/2011-09-28-silverlight-cookbook-switching-to.html %}) since we switched from Microsoft Unity to [Autofac](https://autofac.org/) and we haven't regretted this a single day. Not only is the resolution performance much better than Unity, but it’s the feature set, in particular the relation types, that makes a world of difference. In terms of concurrency, there's not much to think about it. Autofac's concurrency model has been designed to be thread-safe from the ground up. In fact, there's only a single scenario in where you have to be careful what you do. And that's exactly where we went wrong… 
 
 The case this post is about involves the `ContainerBuilder`'s fancy factory registration API. Consider the following statement. 
 
