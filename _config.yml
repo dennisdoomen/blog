@@ -61,7 +61,7 @@ algolia:
   search_only_api_key: "6e82ba66cfd0897a66f86582cabdbc1f"
   powered_by: true
   files_to_exclude:
-    - _posts/*.html
+    - _posts/*/*.html
 
 # SEO Related
 google_site_verification :
