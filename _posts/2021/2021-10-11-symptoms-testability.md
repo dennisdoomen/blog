@@ -1,6 +1,6 @@
 ---
 
-title: 15 flags that your testability practices need maturing
+title: 15 flags that tell you that your testability practices need maturing
 excerpt: "In this fourth post of the series, I'll share some of the (red) flags I might raise while measuring the maturity of testing."
 
 tags:
