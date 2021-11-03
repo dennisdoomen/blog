@@ -1,7 +1,7 @@
 ---
 
-title: "Dennis' 17 Laws of Test Driven Development"
-excerpt: "These are the 'things' that have helped me avoid shooting myself in my own foot while practicing Test Driven Development."
+title: "My Laws of Test Driven Development"
+excerpt: "These are the practices and principles that have helped me avoid shooting myself in my own foot while practicing Test Driven Development."
 
 tags:
 - test driven development
@@ -44,7 +44,9 @@ Nonetheless, these are the "things" that have helped me avoid shooting myself in
 
 1. Postfix your test classes with `Specs`. Doing this emphasizes the idea of writing tests as a specification of the API surface and the behavior of the subject-under-test.
 
-1. Avoid overuse of mocking libraries. If your tests rely a lot on mocking libraries, or worse, use multiple mocks in your tests, chances are that you are either testing too small or your code-under-test has too many responsibilities. And never mock the subject-under-test itself. Then you know for sure that there’s something wrong with the responsibilities of that class.
+1. Avoid overuse of mocking. If your tests rely a lot on mocking libraries, or worse, use multiple mocks in your tests, chances are that you are either testing too small or your code-under-test has too many responsibilities. And never mock the subject-under-test itself. Then you know for sure that there’s something wrong with the responsibilities of that class. Mocking code that encapsulates I/O code, timers or other things which are difficult to control in a test is totally fine though.
+
+1. When a test fails it should be clear what was expected and what actually happens. In other words, you should not need to run the test under a debugger attached to find out what went wrong. For example, when `Assert.IsTrue(value == 5)` fails, you don't see why it failed. It just states it expected a condition to be `true` but found `false`. The use of a good assertion library (like [FluentAssertions](https://fluentassertions.com/)) can help. For instance, `value.Should.Be(5)` results in a clear error message that `value` was expected to be `5` but the actual value was `4`. You can even include a rationale as a parameter. 
 
 1. Acknowledge that some tests are more state-based and others more orchestrational. The former fits well with the Arrange-Act-Assert conventions like this:
 
