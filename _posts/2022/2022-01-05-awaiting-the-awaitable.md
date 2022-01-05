@@ -1,6 +1,6 @@
 ---
 
-title: "How to avoid forgetting to await the awaitable"
+title: "How to stop forgetting to await an awaitable call"
 excerpt: "Do you often forget to await an awaitable method in C#? Here's an elegant solution."
 
 tags:
