@@ -42,6 +42,8 @@ Nonetheless, these are the "things" that have helped me avoid shooting myself in
 
 1. Only test against the observable behavior of a class, module or component. In other words, avoid making "private" members "public", or writing directly to the database from your test. If you really need to access "protected" members, consider using something like a [test-specific subclass](http://xunitpatterns.com/Test-Specific%20Subclass.html). But if you can, interact with the subject-under-test in exactly the same way as you would do in the production code.
 
+1. In general, you should not use production code on the expectation side of an assertion. The argument of being able to change the production code without having to update the test is flawed. Your test is supposed to verify a contract, so if the production code changes, you _do_ want the test to fail. 
+
 1. Postfix your test classes with `Specs`. Doing this emphasizes the idea of writing tests as a specification of the API surface and the behavior of the subject-under-test.
 
 1. Avoid overuse of mocking. If your tests rely a lot on mocking libraries, or worse, use multiple mocks in your tests, chances are that you are either testing too small or your code-under-test has too many responsibilities. And never mock the subject-under-test itself. Then you know for sure that there’s something wrong with the responsibilities of that class. Mocking code that encapsulates I/O code, timers or other things which are difficult to control in a test is totally fine though.
