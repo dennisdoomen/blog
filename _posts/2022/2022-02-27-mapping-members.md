@@ -1,7 +1,7 @@
 ---
 
-title: "Comparing objects with disparate properties"
-excerpt: "Some examples on how to use the new WithMapping API in FluentAssertions"
+title: "Comparing objects with disparate members in Fluent Assertions"
+excerpt: "Some examples on how to use the new WithMapping API to compare objects with differently named properties or fields"
 
 tags:
 - fluent-assertions
