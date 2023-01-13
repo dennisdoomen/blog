@@ -1,7 +1,7 @@
 ---
 
 title: "About software estimation and planning"
-excerpt: "Estimates are almost wrong. Deal with that. They do have some value though."
+excerpt: "Estimates are almost always wrong and that's fine. Just deal with that and prioritize accordingly."
 
 tags:
 - roadmaps
@@ -9,6 +9,8 @@ tags:
 - planning
 - productivity
 ---
+
+Some of my random opinions about software estimation and planning...
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2023/Roadmap.jpg" class="align-center"/> 
 
