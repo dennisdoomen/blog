@@ -9,10 +9,10 @@ tags:
 - building
 ---
 
-Whenever I have to deal with an existing code base for the first time, I always remember the following quote:  
-> If I can't clone your repository and get the application running in under 5 minutes, you're doing something wrong"
+Whenever I have to deal with an existing codebase for the first time, it always reminds me of the following quote:  
+> If I can't clone your repository and get the application running in under 5 minutes, you're doing something wrong
 
-I don't remember exactly who said it, and I couldn't find the original source on Google, but there's truth in that statement. Don't get me wrong, just like a code coverage of at least 90%, this 5 minutes should never be a goal. But it's another nice metric to see how mature you or your teams are. 
+I don't remember exactly who said it, and I couldn't find the original source on Google, but there's truth in that statement. Don't get me wrong though. Just like a code coverage of at least 90%, this 5 minutes should never be a goal. But it's another nice metric to see how mature you or your teams are. 
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2023/desperate.jpg" class="align-center"/> 
 
