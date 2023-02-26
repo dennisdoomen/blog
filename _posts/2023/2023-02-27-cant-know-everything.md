@@ -1,0 +1,24 @@
+---
+
+title: "You can't know everything (and where I get my knowledge)"
+excerpt: "I don't believe somebody can be really proficient in multiple platforms and programming languages, so choose wisely."
+
+tags:
+- learning
+- maturity
+
+---
+
+I often get asked by aspiring software developers where to get more knowledge and what to focus on. Even after 26 years, this remains a very difficult question. A big part of our profession is to keep up with everything that happens in our (not so) little world. The good thing is that you can make a distinction between knowledge that is relatively timeless and knowledge that changes with every back-end and front-end library or framework. The first category includes practices like design patterns, integration patterns, architecture styles, unit testing and Test Driven Development. But also principles like unit testing, Test Driven Development, SOLID, DRY, KISS, YAGNI and how to work with an agile mindset. It never hurts to invest in those since you'll benefit from those for the rest of your career. 
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2023/multiple_languages.png" class="align-center"/> 
+
+The other category is more focused on whatever is hot. Choosing where to put your time and energy is a lot harder. My general advise is to keep tabs on what is happening in that area so you roughly know the pros and cons of the relevant tool, framework or technology, and only dive into the details when you need to. I don't believe somebody can be really proficient in multiple platforms and programming languages. In fact, even if you choose just one, there's still a lot going on. Just look at the .NET space. You can build Windows application with WPF, Mobile applications with MAUI, web applications with Minimal APIs, Razor and Blazor. And if you dare to take the inevitable full-stack road like me, you'll be spending time understanding JavaScript, TypeScript, React, Angular, Swelte, VueJS as well as all supporting tools like Webpack, NPM, Yarn, Astro and what not more. 
+
+Now that I've acknowledged my own limitations (and potential ignorance), you may wonder where _I_ get my knowledge from? I use many different sources. For getting answers to specific questions I can obviously rely on my own colleagues at [Aviva Solutions](https://avivasolutions.nl/werken-bij/a-team). We are only 60-ish, but having several dedicated communities around custom development, Azure, front-end and testing surely helps a lot. However, my primary sources of information for specific questions will always be and remain [Twitter](https://twitter.com/ddoomen) and Google. Especially if I'm dealing with a challenge where many options are possible and trade-offs are hard, getting specific experiences and insights from my followers is way more efficient than Google. And don't forget about [StackOverflow](https://stackoverflow.com/users/253961/dennis-doomen). There's a wealth of knowledge there so it should not be a surprise that many of my Google searches lead me back to StackOverflow. 
+
+To keep myself up-to-date, I love reading articles and blog posts, so I heavily rely on [Pocket](https://getpocket.com/) to keep track of whatever I come across on Twitter, [Mastodon](https://mastodon.social/@ddoomen), [Medium](https://medium.com/@ddoomen) or [LinkedIN](https://www.linkedin.com/in/dennisdoomen/). I sometimes even read technical books, unless my attention span kicks in too early. Funny though that I don't have that with novels from Brandon Sanderson. I'm definitely not a video guy for learning technical topics, nor have I ever watched a PluralSight training. It usually takes too much time to watch (or I'm just too impatient). 
+
+But a major other source for inspiration and new insights is to attend conferences or other in-person events. Being able to talk to other developers, with a different background, with different experiences, in a different development stack is extremely valuable. I particularly like [Open Space](https://www.youtube.com/watch?v=okxaJINX5VU) discussions where people informally exchange experiences and pain-points. This is also one of the reasons I prefer to visit the [Qcon conferences](https://qconferences.com/#next-conference). The speakers at those conferences share honest stories and real experiences from real projects. Just don't take everything you hear at conferences at face value. Fill your mental backpack with new ideas and use them later to make your own trade-offs.
+
+So where do you do get your answers and stay up-to-date with your profession? Let me know by commenting below. Oh, and follow me at [@ddoomen](https://twitter.com/ddoomen) to get regular updates on my everlasting quest for better solutions.
