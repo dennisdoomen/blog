@@ -1,7 +1,7 @@
 ---
 
-title: "You can't know everything (and where I get my knowledge)"
-excerpt: "I don't believe somebody can be really proficient in multiple platforms and programming languages, so choose wisely."
+title: "You can't know everything (and where I get my knowledge from)"
+excerpt: "I don't believe somebody can be really proficient in multiple platforms and programming languages, so invest in knowledge wisely."
 
 tags:
 - learning
