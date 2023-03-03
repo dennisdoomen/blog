@@ -46,6 +46,7 @@
   (patreon, rgb(250, 118, 100)),
   (google-plus, $google-plus-color),
   (linkedin, $linkedin-color),
+  (sessionize, $sessionize-color),
   (mastodon, #595aff);
 
   @each $buttoncolor, $color in $buttoncolors {
