@@ -1,2 +1,2 @@
-del _site /s /q
+del _site\* /q
 bundle exec jekyll serve --incremental
