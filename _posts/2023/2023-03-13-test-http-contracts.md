@@ -56,6 +56,15 @@ HttpResponseMessage response = await host.GetAsync(
 
 string body = await response.Content.ReadAsStringAsync();
 
+var expectation = new[]
+{
+    new
+    {
+        State = "Active",
+        Count = 1
+    }
+}
+
 object actual = JsonSerializer.Deserialize(body, expectation.GetType(), new JsonSerializerOptions
 {
     PropertyNameCaseInsensitive = true
