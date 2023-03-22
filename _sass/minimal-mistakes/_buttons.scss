@@ -10,7 +10,7 @@
   /* default */
   display: inline-block;
   margin-bottom: 0.25em;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.75em;
   font-family: $sans-serif;
   font-size: $type-size-6;
   font-weight: bold;
@@ -47,6 +47,7 @@
   (google-plus, $google-plus-color),
   (linkedin, $linkedin-color),
   (sessionize, $sessionize-color),
+  (aviva, #5fc1e8),
   (mastodon, #595aff);
 
   @each $buttoncolor, $color in $buttoncolors {
