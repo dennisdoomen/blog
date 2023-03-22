@@ -25,18 +25,13 @@ p,
 
   a {
     font-weight: bold;
-    color: $blue !important;
-
-    &:hover {
-      color: darken($blue, 20) !important;
-    }
   }
 
   .btn {
-    color: $white !important;
+    color: $white;
 
     &:hover {
-      color: $white !important;
+      color: $white;
     }
   }
 
