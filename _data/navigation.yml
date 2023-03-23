@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "About Me"
+    url: /about/
   - title: "Fluent Assertions"
     url: https://fluentassertions.com/
   - title: "C# Coding Guidelines"
