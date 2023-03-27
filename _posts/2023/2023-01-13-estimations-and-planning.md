@@ -28,4 +28,7 @@ Some of my random opinions about software estimation and planning...
 * And the same can be said about the team structure. If they haven't been set-up in a way to work on the right things at the right time with the right people, change the structure. 
 * Accept that plans will change instead of fighting change. Thats why agile development was invented in the first place. Respond to a change instead of following a plan. That doesn't mean you can't have some kind of budget and remain control. Just make sure your backlog is properly prioritized. 
 
-So what do you think? What are your biggest issues with planning and estimations. Let me know by commenting below. Oh, and follow me at [@ddoomen](https://twitter.com/ddoomen) to get regular updates on my everlasting quest for better solutions.
+So what do you think? What are your biggest issues with planning and estimations. Let me know by commenting below. 
+
+## About me
+I'm a Microsoft MVP and Principal Consultant at [Aviva Solutions](https://avivasolutions.nl/) with 26 years of experience under my belt. As a coding software architect and/or lead developer, I specialize in building or improving (legacy) full-stack enterprise solutions based on .NET as well as providing coaching on all aspects of designing, building, deploying and maintaining software systems. I'm the author of [Fluent Assertions](https://www.fluentassertions.com), a popular .NET assertion library, [Liquid Projections](https://www.liquidprojections.net), a set of libraries for building Event Sourcing projections and I've been maintaining [coding guidelines for C#](https://www.csharpcodingguidelines.com) since 2001. You can find me on [Twitter](https://twitter.com/ddoomen) and [Mastadon](https://mastodon.social/@ddoomen).

@@ -1,7 +1,7 @@
 ---
 
 title: "9 coding practices that have a smell"
-excerpt: "Naming in software is hard, so here's how I name and group my automated tests to use them as documentation'"
+excerpt: "Code that may be readable but which purpose is unclear doesn't make anybody happy"
 
 tags:
 - naming
