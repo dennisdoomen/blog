@@ -20,7 +20,7 @@ A lot of developers believe that the most important thing of their job is to pro
 
 Now compare it with Rider (in its dark mode).
 
-![](/assets/images/posts/2020-07-22/rider-colors.jpg)
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2020-07-22/rider-colors.jpg" /> 
 
 So at first glance, the difference isn't as big as you may expect. Visual Studio highlights local variables, whereas Rider does this with fields. I do like how Rider always shows you the name of the parameter, even though I know not everybody agrees with me on this. And did you notice how Rider shows the return type of a chained API?
 

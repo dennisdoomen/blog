@@ -12,7 +12,7 @@ tags:
 - roslyn
 ---
 
-Now that all those .NET codebases start to get littered with `async` and `await` statements, I'm observing another phenomenon: forgetting to `await` an awaitable member. Not just in the code I deal with in my day job, but a lot of users of Fluent Assertions have been running into this, especially since we introduced "async" versions such as `ThrowAsync` and `NotThrowAsync`. You would expect that modern IDEs have become smart enough to help us with that. And indeed, both Visual Studio and [Rider](/2020/07/a-month-without-rider-part2) do, but only to an extend. 
+Now that all those .NET codebases start to get littered with `async` and `await` statements, I'm observing another phenomenon: forgetting to `await` an awaitable member. Not just in the code I deal with in my day job, but a lot of users of Fluent Assertions have been running into this, especially since we introduced "async" versions such as `ThrowAsync` and `NotThrowAsync`. You would expect that modern IDEs have become smart enough to help us with that. And indeed, both Visual Studio and [Rider]({% post_url 2020/2020-07-22-a-month-without-rider-part2 %}) do, but only to an extend. 
 
 Consider for example the following (contrived) async method:
 

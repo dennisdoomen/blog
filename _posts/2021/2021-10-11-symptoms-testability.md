@@ -13,7 +13,7 @@ With almost 25 years of experience, as a consultant, I help organizations in the
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2021/symptoms-testability.jpg" class="align-center"/> 
 
-In the [previous two posts](/2021/09/signs-architecture), we've been looking at the effect certain tools, techniques and architectural choices can have on developer productivity. But we never talked about how testability can influence that same productivity. No doubt every organization has this inheritent desire to make new functionality available to its clients as fast as possible. But many of them run into a (lack of) testability that prevents them to put that code in production with confidence. Here's a bunch of (red) flags I may raise when measuring the maturity of testing in the organization's mindset.
+In the [previous two posts]({% post_url 2021/2021-09-02-signs-architecture %}), we've been looking at the effect certain tools, techniques and architectural choices can have on developer productivity. But we never talked about how testability can influence that same productivity. No doubt every organization has this inheritent desire to make new functionality available to its clients as fast as possible. But many of them run into a (lack of) testability that prevents them to put that code in production with confidence. Here's a bunch of (red) flags I may raise when measuring the maturity of testing in the organization's mindset.
 
 * Hiring professionals that have the exceptional skills to try to "brake" an application as well train the development team in improving the testability of a code-base, but then keep calling them testers instead of test engineers, engineers-in-test or QA engineers. 
 

@@ -11,7 +11,7 @@ tags:
 
 With more than 26 years of experience, as a consultant, I help organizations in the .NET space to professionalize their entire software development efforts, from idea to production. During such visits, I get to scrutinize their development practices, quality standards, design principles, the tools they use, their deployment pipeline, the team dynamics, the requirements process and much more. In this series of short posts, I'll share some of the most common pain points I run into. 
 
-In the [last post](/2022/01/symptoms-traceability) of this series, we looked at both the traceability of technical and architectural decisions as well as the micro-decisions that were made at the code-level and (hopefully) captured in your source control system. So the logical follow-up to that is to look at the readability and maintainability of the code itself. There's a lot to cover there, so let's see what I tend to run into.
+In the [last post]({% post_url 2022/2022-01-14-symptoms-traceability %}) of this series, we looked at both the traceability of technical and architectural decisions as well as the micro-decisions that were made at the code-level and (hopefully) captured in your source control system. So the logical follow-up to that is to look at the readability and maintainability of the code itself. There's a lot to cover there, so let's see what I tend to run into.
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2023/code-smells.png" class="align-center"/> 
 
