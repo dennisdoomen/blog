@@ -1,7 +1,7 @@
 ---
 
 title: "20 questions to determine whether your teams are mature enough"
-excerpt: ""
+excerpt: "In this final post of this series, I'm going to change direction and talk about the predictability and maturity of your development team(s)"
 
 tags:
 - teams
