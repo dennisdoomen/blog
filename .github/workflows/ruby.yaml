@@ -1,5 +1,5 @@
 name: Rebuild Algolia Index
-on: page_build
+on: [page_build, workflow_dispatch]
 jobs:
     refresh-index:
         name: Refresh Algolia Index
@@ -8,7 +8,7 @@ jobs:
             - name: Checkout Sources
               uses: actions/checkout@v2
             - name: Setup Ruby
-              uses: actions/setup-ruby
+              uses: ruby/setup-ruby@v1
               with:
                 ruby-version: '2.4' # Version range or exact version of a Ruby version to use, using semvers version range syntax.
             - name: Run Jekyll
