@@ -15,7 +15,7 @@ With almost 25 years of experience, as a consultant, I help organizations in the
 
 In the [previous two posts]({% post_url 2021/2021-09-02-signs-architecture %}), we've been looking at the effect certain tools, techniques and architectural choices can have on developer productivity. But we never talked about how testability can influence that same productivity. No doubt every organization has this inheritent desire to make new functionality available to its clients as fast as possible. But many of them run into a (lack of) testability that prevents them to put that code in production with confidence. Here's a bunch of (red) flags I may raise when measuring the maturity of testing in the organization's mindset.
 
-* Hiring professionals that have the exceptional skills to try to "brake" an application as well train the development team in improving the testability of a code-base, but then keep calling them testers instead of test engineers, engineers-in-test or QA engineers. 
+* Hiring professionals that have the exceptional skills to try to "break" an application as well train the development team in improving the testability of a code-base, but then keep calling them testers instead of test engineers, engineers-in-test or QA engineers. 
 
 * Not making a distinction between structured and unstructured testing and then wasting those unique skills and mindset I just mentioned on manual testing of test scenarios that could have been covered by fully automatic integration or UI tests. 
 
