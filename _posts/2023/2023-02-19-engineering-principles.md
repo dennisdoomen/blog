@@ -10,7 +10,7 @@ tags:
 
 ---
 
-[Last time](https://www.continuousimprover.com/2023/02/maintainable-code.html), I tried to made a case on why I believe readability, testability, isolation, tracebility and discoverability should be the foundations for writing testable and maintainable code. Another perspective,one that I often use in my workshops, is to show how modern engineering practices contribute to those five aspects of our profession. Here's a map of those principles and how they reinforce each other. 
+[Last time](https://www.continuousimprover.com/2023/02/maintainable-code.html), I tried to make a case on why I believe readability, testability, isolation, tracebility and discoverability should be the foundations for writing testable and maintainable code. Another perspective,one that I often use in my workshops, is to show how modern engineering practices contribute to those five aspects of our profession. Here's a map of those principles and how they reinforce each other. 
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2023/engineering-principles.jpg" class="align-center"/> 
 
