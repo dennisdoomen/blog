@@ -1,7 +1,7 @@
 ---
 
 title: "22 reasons to ditch Azure DevOps and switch to GitHub as soon as possible"
-excerpt: "I resent every day I have to work with AZDO. Not because of personal feelings, but because I've seen myself how it is holding back the teams I work with to collaborate more efficiently and commit code that has a high level of traceability."
+excerpt: "How Azure DevOps is holding back the teams I work with to collaborate efficiently and commit code that has a high level of traceability, and how GitHub fixes that"
 
 tags:
 - collaboration
