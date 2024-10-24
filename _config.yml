@@ -12,7 +12,7 @@ locale                   : "en-US"
 title                    : "The Continuous Improver"
 name                     : "Dennis Doomen"
 description              : "On an everlasting quest for better solutions"
-url                      : "https://www.continuousimprover.com"
+url                      : "https://www.dennisdoomen.com"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : dennisdoomen/dennisdoomen.github.io
 github                   : dennisdoomen/dennisdoomen.github.io
