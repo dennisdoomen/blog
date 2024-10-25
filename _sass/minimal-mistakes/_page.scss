@@ -179,7 +179,10 @@
     .page__meta,
     .page__lead,
     .btn {
-      color: #fff;
+      color: #fff !important;
+    }
+
+    .btn {
       text-shadow: 1px 1px 4px rgba(#000, 0.5);
     }
 
