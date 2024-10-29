@@ -180,13 +180,13 @@
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  background: $text-background-color;
+  background: #1672f3;
 
   a {
     display: block;
     margin: 0 1rem;
     padding: 0.5rem 0;
-    color: $masthead-link-color;
+    color: #fff;
     text-decoration: none;
 
     &:hover {

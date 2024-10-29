@@ -4,7 +4,7 @@
 
 .masthead {
   position: relative;
-  background-color: #fff;
+  background-color: #1672f3;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.15s;
@@ -54,6 +54,8 @@
   margin-left: 0;
   margin-right: 0;
   width: 100%;
+  background-color: #1672f3;
+  
   clear: both;
 
   .site-nav {
@@ -79,7 +81,7 @@
   white-space: nowrap;
   font-size: medium;
   font-family: $header-font-family;
-  color: $header-color;
+  color: #fff;
    padding-top: 0;
 
   &--lg {
