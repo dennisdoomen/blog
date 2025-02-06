@@ -5,8 +5,6 @@ excerpt: "How you can use Nuke's OnlyWhenStatic and OnlyWhenDynamic to handle th
 tags:
 ---
 
-## About this new project
-
 Sometimes you run into a little open-source project that makes you wonder how you ever lived without it. [Nuke](https://nuke.build/), the C#-based build pipeline framework, is definitely one of them. If you haven't seen Nuke yet, check out [my article]({% post_url /2020/2020-03-01-reasons-for-adopting-nuke %}) for a in-depth explanation. For now, consider the following excerpt.
 
 
