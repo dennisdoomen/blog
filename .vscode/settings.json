@@ -6,5 +6,6 @@
         "markdown",
         "latex",
         "plaintext"
-    ]
+    ],
+    "markdown.validate.enabled": true
 }
