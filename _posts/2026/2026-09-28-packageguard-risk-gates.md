@@ -4,6 +4,8 @@ excerpt: "How to use risk scores, package age and other signals as a quality gat
 tags: [.NET, DevSecOps, Open Source, Supply Chain Security, Tooling]
 ---
 
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2026/packageguard-risk-gates-cover.png" class="align-center" alt="PackageGuard 2.8.0: risk-based deny rules for maxOverallRisk, minPackageAgeDays, denyUnsigned, warn lists, riskExceptions and --treat-deny-as-warning" />
+
 ## Why I wanted more than a report
 
 In my [previous post]({% post_url 2026/2026-09-21-packageguard-open-source-dependency-risk %}), I explained how PackageGuard calculates the risk of every open-source dependency in your code base. It gives every package a legal, a security and an operational score and generates a HTML report with all the evidence behind those scores. I'm quite proud of that report. But I also know how it goes in most projects. Somebody opens the report once, thinks "interesting", and then never looks at it again.
